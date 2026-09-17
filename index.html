@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlayViral — Aprenda a estruturar vídeos que prendem a atenção</title>
+  <meta name="description" content="Um método prático para transformar sua comunicação e criar conteúdo que realmente seja percebido, gere valor e abra novas portas. Sem depender da sorte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Ambient Cursor Glow & Reading Progress -->
+  <div class="ambient-glow" id="ambientGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Floating Quick-Action Pill (Visible on Scroll) -->
+  <a href="#cta" class="floating-cta" id="floatingCta" aria-label="Quero aplicar para o PlayViral">
+    <span class="floating-cta__icon" aria-hidden="true">▶</span>
+    <span class="floating-cta__text">Aplicar para o PlayViral</span>
+  </a>
+
+  <!-- Top Announcement Bar (Figma node 305:1274 / 305:1279) -->
+  <aside class="top-bar" data-node-id="305:1274">
+    <p class="top-bar__text" data-node-id="305:1279"><span class="golden-point golden-point--hero" aria-hidden="true">●</span> EXCLUSIVO E COM LIMITE DE MENTORADOS.</p>
+  </aside>
+
+  <!-- ============================================================
+    HERO
+  ============================================================ -->
+  <section class="hero" id="hero" data-node-id="5:7">
+    <img
+      src="assets/images/hero-bg.png"
+      alt=""
+      class="hero__bg"
+      width="1920"
+      height="875"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="container hero__container">
+
+      <div class="hero__content">
+
+        <div class="hero__logo" data-node-id="18:36">
+          <img
+            src="assets/images/hero-logo-icon.png"
+            alt="Ícone PlayViral"
+            class="hero__logo-icon"
+            width="100"
+            height="113"
+          />
+          <p class="hero__logo-text" data-node-id="18:34">
+            <span class="hero__logo-play">Play</span><span class="hero__logo-viral gold-text">Viral</span>
+          </p>
+        </div>
+
+        <h1 class="hero__title" data-node-id="6:17">
+          Aprenda o processo<br />
+          por trás de<br />
+          conteúdos que<br />
+          prendem atenção e<br />
+          crescem com<br />
+          consistência
+        </h1>
+
+        <p class="hero__description" data-node-id="112:2371">
+          Um método prático para transformar sua comunicação e criar conteúdo que realmente seja percebido, gere valor e abra novas portas.
+        </p>
+
+        <div class="hero__cta-group" data-node-id="112:2372">
+          <a href="#cta" class="btn btn--gold" data-node-id="265:767">
+            <span data-node-id="265:768">QUERO APLICAR O PLAYVIRAL</span>
+            <img src="assets/icons/arrow.svg" alt="" width="16" height="16" data-node-id="265:769" />
+          </a>
+          <p class="hero__micro" data-node-id="112:2377">Vagas limitadas. Aplicação leva menos de 3 minutos.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+    S2 — POSICIONAMENTO / PROBLEMA
+  ============================================================ -->
+  <section class="positioning" id="positioning">
+    <div class="positioning__bg-letter positioning__bg-letter--p" aria-hidden="true">P</div>
+    <div class="positioning__bg-letter positioning__bg-letter--v" aria-hidden="true">v</div>
+
+    <div class="container positioning__container">
+      <div class="positioning__card">
+
+        <div class="positioning__left">
+          <div class="positioning__badge">
+            <span class="gold-text">PlayViral</span>
+            <span class="positioning__badge-sep">•</span>
+            <span>Por que isso importa</span>
+          </div>
+
+          <h2 class="positioning__title">
+            Viralizar <strong>não deveria</strong> depender de <strong>um golpe de sorte.</strong>
+          </h2>
+
+          <p class="positioning__description">
+            Depender de tendências, dancinhas e fórmulas vazias te coloca em um ciclo que <strong>cansa, frustra e não constrói nada</strong> no longo prazo. O PlayViral existe para mudar isso.
+          </p>
+
+          <a href="#cta" class="btn btn--gold-outline positioning__btn">
+            <span class="positioning__btn-play">▶</span>
+            <span>Quero mudar isso na prática</span>
+          </a>
+        </div>
+
+        <div class="positioning__right">
+          <ul class="positioning__list" role="list">
+            <li class="positioning__pill">
+              <div class="positioning__check" aria-hidden="true">
+                <img src="assets/images/s2-checkmark.svg" alt="" width="14" height="14" />
+              </div>
+              <p>Você depende de <strong>tendências e dancinhas</strong> e vive um ciclo que cansa, frustra e não constrói nada no longo prazo.</p>
+            </li>
+            <li class="positioning__pill">
+              <div class="positioning__check" aria-hidden="true">
+                <img src="assets/images/s2-checkmark.svg" alt="" width="14" height="14" />
+              </div>
+              <p>As <strong>fórmulas vazias</strong> até geram um pico, mas somem quando o algoritmo muda — e você volta à estaca zero.</p>
+            </li>
+            <li class="positioning__pill">
+              <div class="positioning__check" aria-hidden="true">
+                <img src="assets/images/s2-checkmark.svg" alt="" width="14" height="14" />
+              </div>
+              <p>Aqui você aprende um <strong>processo claro, testado e aplicável</strong>, do primeiro roteiro até a publicação.</p>
+            </li>
+            <li class="positioning__pill">
+              <div class="positioning__check" aria-hidden="true">
+                <img src="assets/images/s2-checkmark.svg" alt="" width="14" height="14" />
+              </div>
+              <p>Um método que <strong>funciona mesmo quando o algoritmo muda</strong>, sem depender de sorte.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="positioning__logos" aria-label="Parceiros e selos de confiança">
+        <div class="positioning__logo-item">
+          <span class="positioning__logo-abbr gold-text">RV</span>
+          <div class="positioning__logo-text">
+            <span>RVE</span>
+            <small>Roteiro Venda Estratégica</small>
+          </div>
+        </div>
+        <div class="positioning__logo-item">
+          <span class="positioning__logo-abbr gold-text">RV</span>
+          <div class="positioning__logo-text">
+            <span>RVE</span>
+            <small>Roteiro Venda Estratégica</small>
+          </div>
+        </div>
+        <div class="positioning__logo-item">
+          <span class="positioning__logo-abbr gold-text">RV</span>
+          <div class="positioning__logo-text">
+            <span>RVE</span>
+            <small>Roteiro Venda Estratégica</small>
+          </div>
+        </div>
+        <div class="positioning__logo-item">
+          <span class="positioning__logo-abbr gold-text">RV</span>
+          <div class="positioning__logo-text">
+            <span>RVE</span>
+            <small>Roteiro Venda Estratégica</small>
+          </div>
+        </div>
+        <div class="positioning__logo-item">
+          <span class="positioning__logo-abbr gold-text">RV</span>
+          <div class="positioning__logo-text">
+            <span>RVE</span>
+            <small>Roteiro Venda Estratégica</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    S3 — PROCESSO / TRANSFORMAÇÃO
+  ============================================================ -->
+  <section class="process" id="process">
+    <img
+      src="assets/images/s3-bg.png"
+      alt=""
+      class="process__bg"
+      width="1920"
+      height="843"
+    />
+    <div class="process__overlay" aria-hidden="true"></div>
+
+    <div class="container process__container">
+
+      <div class="process__visual" aria-hidden="true">
+        <!-- 3D crystal and badges are rendered directly in high quality in s3-bg.png -->
+      </div>
+
+      <div class="process__content">
+        <h2 class="process__title">
+          Um processo para transformar <em class="gold-text-warm">atenção</em> em conteúdo que as pessoas querem continuar assistindo.
+        </h2>
+
+        <div class="process__steps">
+          <div class="process__timeline" aria-hidden="true"></div>
+
+          <div class="process__step">
+            <div class="process__step-dot" aria-hidden="true"></div>
+            <div class="process__step-card">
+              <p>Diagnóstico do seu momento e dos seus conteúdos atuais para definir o plano ideal.</p>
+            </div>
+          </div>
+
+          <div class="process__step">
+            <div class="process__step-dot" aria-hidden="true"></div>
+            <div class="process__step-card">
+              <p>Aulas práticas, diretas e aplicáveis, com foco em resultado real.</p>
+            </div>
+          </div>
+
+          <div class="process__step">
+            <div class="process__step-dot" aria-hidden="true"></div>
+            <div class="process__step-card">
+              <p>Mentorias, análises e suporte para você evoluir e corrigir a rota.</p>
+            </div>
+          </div>
+
+          <div class="process__step">
+            <div class="process__step-dot" aria-hidden="true"></div>
+            <div class="process__step-card">
+              <p>Um método vivo, que se adapta, porque o digital não para — e você também não.</p>
+            </div>
+          </div>
+
+          <div class="process__step process__step--result">
+            <div class="process__result-card">
+              <div class="process__result-icon">
+                <img src="assets/icons/result-icon.svg" alt="" width="15" height="15" />
+              </div>
+              <p><strong>Resultado:</strong> reuniões objetivas, decisões mais rápidas, follow-ups que fecham.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+    S4 — CONTEÚDO DO MÉTODO
+  ============================================================ -->
+  <section class="method" id="method" data-node-id="195:1807">
+    <div class="method__bg-letter method__bg-letter--p" data-node-id="337:15" aria-hidden="true">P</div>
+    <div class="method__bg-letter method__bg-letter--v" data-node-id="337:18" aria-hidden="true">V</div>
+    <div class="container method__container">
+
+      <div class="method__header" data-node-id="195:1810">
+        <p class="method__eyebrow" data-node-id="195:1812"><span class="golden-point" aria-hidden="true">●</span> Comunidade Play Viral</p>
+        <h2 class="method__title" data-node-id="195:1814">
+          <span class="gold-text">Tudo que você encontra</span> por dentro<br>do método
+        </h2>
+        <p class="method__description" data-node-id="195:1819">
+          Um ecossistema completo de conteúdo, mentoria e prática para você crescer com consistência e viralizar de verdade.
+        </p>
+      </div>
+
+      <div class="method__grid">
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card1.png" alt="Conteúdo Viral Diário" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">CONTEÚDO <span class="gold-text">VIRAL DIÁRIO</span></h3>
+          <p class="method-card__desc">Você terá roteiros e material prontos para usar e viralizar, economizando seu tempo e maximizando alcance.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card2.png" alt="Acesso à Mentoria Exclusiva" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">ACESSO À <span class="gold-text">MENTORIA EXCLUSIVA</span></h3>
+          <p class="method-card__desc">Tire dúvidas estratégicas diretamente com os experts do 'Play Viral' para otimizar seu perfil.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card3.png" alt="+ de 30 Lives Exclusivas" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">+ DE 30 <span class="gold-text">LIVES EXCLUSIVAS</span></h3>
+          <p class="method-card__desc">Encontros ao vivo semanais sobre as últimas tendências e técnicas de crescimento orgânico.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card4.png" alt="Mão na Massa: Edição e Roteiro" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">MÃO NA MASSA: <span class="gold-text">EDIÇÃO E ROTEIRO</span></h3>
+          <p class="method-card__desc">Aulas práticas de edição avançada e criação de roteiros irresistíveis que prendem a atenção.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card1.png" alt="Direção Criativa" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">DIREÇÃO <span class="gold-text">CRIATIVA</span></h3>
+          <p class="method-card__desc">Exemplos práticos para criar conteúdos que convencem e conectam de verdade com a sua audiência.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card6.png" alt="Estratégia e Mapa do Sucesso" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">ESTRATÉGIA E <span class="gold-text">MAPA DO SUCESSO</span></h3>
+          <p class="method-card__desc">Roteiros de longo prazo e planejamento tático para o crescimento do seu perfil.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card7.png" alt="Laboratório de Conteúdo" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">LABORATÓRIO DE <span class="gold-text">CONTEÚDO</span></h3>
+          <p class="method-card__desc">Aprenda a escrever ganchos irresistíveis e roteiros que engajam e viralizam.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card8.png" alt="Material Completo de Apoio" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">MATERIAL <span class="gold-text">COMPLETO DE APOIO</span></h3>
+          <p class="method-card__desc">Ebooks, templates e planilhas para organizar e impulsionar sua produção de conteúdo.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card5.png" alt="Análise de Perfil ao Vivo" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">ANÁLISE DE <span class="gold-text">PERFIL AO VIVO</span></h3>
+          <p class="method-card__desc">Avaliação prática do seu conteúdo e dicas de otimização em tempo real.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card4.png" alt="Desafio das 7 Semanas" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">DESAFIO DAS <span class="gold-text">7 SEMANAS</span></h3>
+          <p class="method-card__desc">Um programa guiado para ver seu perfil crescendo semana após semana com metas claras.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card10.png" alt="Jornada de 30 Dias" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">JORNADA DE <span class="gold-text">30 DIAS</span></h3>
+          <p class="method-card__desc">Transforme seus hábitos com exercícios diários simples e acompanhamento personalizado.</p>
+        </article>
+
+        <article class="method-card">
+          <div class="method-card__image">
+            <img src="assets/images/s4-card11.png" alt="Plano de Aprendizagem Intensiva" width="281" height="281" loading="lazy" />
+          </div>
+          <h3 class="method-card__title">PLANO DE <span class="gold-text">APRENDIZAGEM INTENSIVA</span></h3>
+          <p class="method-card__desc">Acelere seu desenvolvimento com conteúdos exclusivos e desafios práticos semanais.</p>
+        </article>
+
+      </div>
+
+      <!-- Seta baixo (Figma node 255:761) -->
+      <div class="method__scroll-wrap">
+        <a href="#community" class="method__scroll-btn" aria-label="Rolar para a próxima seção">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    S5 — COMUNIDADE / ÁREA DE MEMBROS
+  ============================================================ -->
+  <section class="community" id="community">
+    <img
+      src="assets/images/s5-bg.png"
+      alt=""
+      class="community__bg"
+      width="1920"
+      height="984"
+    />
+    <div class="community__overlay" aria-hidden="true"></div>
+
+    <div class="container community__container">
+      <div class="community__content">
+        <p class="community__eyebrow">DO CONSUMO À AUTORIA</p>
+        <h2 class="community__title">
+          Você não entra para acumular aulas.
+          <em class="gold-text-warm">Entra para produzir melhor.</em>
+        </h2>
+        <p class="community__description">
+          O PlayViral é um programa de acompanhamento prático para quem quer sair do plano da ideia e entrar no campo da ação, com estratégia, apoio e direção.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    S6 — DEPOIMENTOS
+  ============================================================ -->
+  <section class="testimonials" id="testimonials" data-node-id="224:263">
+    <div class="container testimonials__container" data-node-id="224:267">
+
+      <div class="testimonials__icon-band" data-node-id="224:269" aria-hidden="true">
+        <span>⚡</span><span>📈</span><span>👁</span><span>🤍</span><span>🎯</span><span>🔗</span><span>💡</span><span>▶</span><span>⚡</span><span>📈</span><span>👁</span><span>🤎</span><span>🎯</span><span>🔗</span><span>💡</span><span>▶</span><span>⚡</span><span>📈</span><span>👁</span><span>🤍</span><span>🎯</span>
+      </div>
+
+      <div class="testimonials__header" data-node-id="224:387">
+        <p class="testimonials__number" data-node-id="224:382">07</p>
+        <p class="testimonials__label" data-node-id="224:385">NA PRÁTICA</p>
+        <h2 class="testimonials__title" data-node-id="224:389">
+          O conteúdo muda quando existe método por trás.
+        </h2>
+        <div class="testimonials__desc-wrap" data-node-id="224:391">
+          <p class="testimonials__description" data-node-id="224:393">
+            Pessoas reais, em diferentes nichos, aplicando o método PlayViral e colhendo resultados consistentes. Estrutura, estratégia e execução geram outro nível de conteúdo.
+          </p>
+          <div class="testimonials__arrows" data-node-id="224:395">
+            <button class="testimonials__arrow-btn testimonials__arrow-btn--prev" data-node-id="224:396" aria-label="Depoimento anterior">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <button class="testimonials__arrow-btn testimonials__arrow-btn--next" data-node-id="224:400" aria-label="Próximo depoimento">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials__filters">
+        <button class="testimonials__filter testimonials__filter--active" data-filter="all">
+          <span class="testimonials__filter-icon">🎬</span>
+          <span>Criar</span>
+        </button>
+        <button class="testimonials__filter" data-filter="retain">
+          <span class="testimonials__filter-icon">🔄</span>
+          <span>Reter</span>
+        </button>
+        <button class="testimonials__filter" data-filter="reach">
+          <span class="testimonials__filter-icon">📈</span>
+          <span>Alcançar</span>
+        </button>
+        <button class="testimonials__filter" data-filter="grow">
+          <span class="testimonials__filter-icon">🚀</span>
+          <span>Crescer</span>
+        </button>
+      </div>
+
+      <div class="testimonials__cards">
+
+        <article class="testimonial-card">
+          <figure class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-label="Marina Alves">MA</div>
+            <figcaption>
+              <p class="testimonial-card__name">Marina Alves</p>
+              <p class="testimonial-card__role">Criadora de conteúdo | Lifestyle</p>
+            </figcaption>
+          </figure>
+          <blockquote class="testimonial-card__quote">
+            "O PlayViral me deu clareza e me fez entender o que realmente funciona nas redes. Consegui criar com propósito e meus vídeos começaram a reter muito mais."
+          </blockquote>
+          <p class="testimonial-card__result">+218% de retenção média</p>
+        </article>
+
+        <article class="testimonial-card">
+          <figure class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-label="Rafael Costa">RC</div>
+            <figcaption>
+              <p class="testimonial-card__name">Rafael Costa</p>
+              <p class="testimonial-card__role">Criador de conteúdo | Negócios</p>
+            </figcaption>
+          </figure>
+          <blockquote class="testimonial-card__quote">
+            "Consegui transformar minhas ideias em vídeos muito mais estruturados. As pessoas passaram a compartilhar naturalmente."
+          </blockquote>
+          <p class="testimonial-card__result">+3,4x compartilhamentos</p>
+        </article>
+
+        <article class="testimonial-card">
+          <figure class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-label="Juliana Mendes">JM</div>
+            <figcaption>
+              <p class="testimonial-card__name">Juliana Mendes</p>
+              <p class="testimonial-card__role">Criadora de conteúdo | Beleza</p>
+            </figcaption>
+          </figure>
+          <blockquote class="testimonial-card__quote">
+            "Hoje tenho muito mais direção no que produzo. O conteúdo ficou mais claro, mais estratégico e o crescimento veio naturalmente."
+          </blockquote>
+          <p class="testimonial-card__result">Conteúdo mais claro e estratégico</p>
+        </article>
+
+      </div>
+
+      <div class="testimonials__dots" role="tablist" aria-label="Navegar pelos depoimentos">
+        <button class="testimonials__dot testimonials__dot--active" role="tab" aria-selected="true" aria-label="Depoimento 1" data-index="0"></button>
+        <button class="testimonials__dot" role="tab" aria-selected="false" aria-label="Depoimento 2" data-index="1"></button>
+        <button class="testimonials__dot" role="tab" aria-selected="false" aria-label="Depoimento 3" data-index="2"></button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+    S7 — ESPECIALISTA / AUTORIDADE (Figma node 160:359)
+  ============================================================ -->
+  <section class="expert" id="expert">
+    <div class="container expert__container" data-node-id="160:359">
+
+      <div class="expert__grid" data-node-id="160:360">
+        <div class="expert__content" data-node-id="160:361">
+          <h2 class="expert__title" data-node-id="160:363">
+            Conteúdo estratégico precisa ser ensinado por quem vive o processo.
+          </h2>
+          <p class="expert__description" data-node-id="160:365">
+            O PlayViral é conduzido por alguém que está todos os dias no mercado, criando, testando, analisando e acompanhando de perto o que realmente funciona. Mais do que teoria, aqui você aprende com experiência real.
+          </p>
+          <div class="expert__logo" data-node-id="160:367">
+            <span class="expert__logo-mark gold-text">▶</span>
+            <div data-node-id="160:375">
+              <strong data-node-id="160:377">PLAY</strong>
+              <strong data-node-id="160:379">VIRAL</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="expert__visual" data-node-id="160:380">
+          <p class="expert__name-decor" data-node-id="160:381" aria-hidden="true">Play</p>
+          <div class="expert__image-wrap" data-node-id="160:382">
+            <img src="assets/images/expert-valeria.png" alt="Valéria Mendes" class="expert__image" width="423" height="639" loading="lazy" />
+          </div>
+          <div class="expert__namecard" data-node-id="160:384">
+            <span class="expert__namecard-icon" aria-hidden="true">⚖</span>
+            <div class="expert__namecard-sep" aria-hidden="true"></div>
+            <div data-node-id="160:389">
+              <p class="expert__namecard-name" data-node-id="160:391">VALÉRIA MENDES</p>
+              <p class="expert__namecard-role" data-node-id="160:393">Gestora de Marketing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="expert__ribbon" aria-hidden="true">
+        <div class="expert__ribbon-track">
+          <span>NEXT LEVEL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • NEXT LEVEL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL •</span>
+          <span>NEXT LEVEL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • NEXT LEVEL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL •</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+    FAQ
+  ============================================================ -->
+  <section class="faq" id="faq" data-node-id="247:640">
+    <div class="container faq__container" data-node-id="247:642">
+
+      <div class="faq__col-left" data-node-id="247:663">
+        <div class="faq__badge" data-node-id="247:664">
+          <span class="faq__badge-dot" aria-hidden="true"></span>
+          <span class="faq__badge-title" data-node-id="247:666">FAQ</span>
+          <span class="faq__badge-dots" data-node-id="247:668">• • •</span>
+        </div>
+
+        <h2 class="faq__title" data-node-id="247:671">
+          <span class="faq__title-drop">D</span>úvidas <span class="gold-text">comuns</span><br>sobre o PlayViral.
+        </h2>
+
+        <div class="faq__support-card">
+          <div class="faq__support-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </div>
+          <h3 class="faq__support-title">Ficou com alguma dúvida específica?</h3>
+          <p class="faq__support-desc">Você pode entrar em contato diretamente pelo WhatsApp:</p>
+          <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="faq__support-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Tenho uma dúvida</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="faq__list" data-node-id="247:662">
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="true" aria-controls="faq-1">
+            <span>Preciso já produzir conteúdo profissionalmente?</span>
+            <span class="faq-item__icon" aria-hidden="true">−</span>
+          </button>
+          <div class="faq-item__answer is-open" id="faq-1" role="region">
+            <div class="faq-item__answer-inner">
+              <p>Não. O PlayViral atende desde quem está começando até quem já produz e quer estruturar melhor o processo. O que importa é a disposição para executar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-2">
+            <span>O PlayViral serve para qualquer nicho?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer" id="faq-2" role="region">
+            <div class="faq-item__answer-inner">
+              <p>Sim. Os princípios de retenção, gancho e estrutura funcionam independentemente do tema. O método ensina a pensar conteúdo, não apenas a copiar um formato.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-3">
+            <span>Como funcionam as lives e mentorias?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer" id="faq-3" role="region">
+            <div class="faq-item__answer-inner">
+              <p>Encontros ao vivo semanais onde você pode tirar dúvidas diretamente com os especialistas e ter seu perfil e conteúdo analisados em tempo real.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-4">
+            <span>Por quanto tempo tenho acesso aos materiais?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer" id="faq-4" role="region">
+            <div class="faq-item__answer-inner">
+              <p>Você tem acesso por 1 ano a todas as aulas, atualizações, materiais de apoio e encontros gravados da mentoria.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-5">
+            <span>Como funciona a análise de perfil?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer" id="faq-5" role="region">
+            <div class="faq-item__answer-inner">
+              <p>A análise é feita ao vivo nas mentorias. Seu perfil, bio, ganchos e roteiros são avaliados para identificar oportunidades de melhoria imediatas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-6">
+            <span>O que acontece depois que envio minha aplicação?</span>
+            <span class="faq-item__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-item__answer" id="faq-6" role="region">
+            <div class="faq-item__answer-inner">
+              <p>Nossa equipe analisa seu momento e objetivos. Se houver fit com o programa, entramos em contato para apresentar as condições e liberar seu acesso.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    CTA FINAL (S9 - Figma node 124:97 / 124:115)
+  ============================================================ -->
+  <section class="cta-final" id="cta" data-node-id="124:97">
+    <div class="cta-final__glow" aria-hidden="true"></div>
+    <div class="container cta-final__container">
+      <div class="cta-final__narrative" aria-hidden="true">
+        <span class="golden-point">●</span>
+        <span class="cta-final__narrative-line"></span>
+        <span class="cta-final__narrative-play">▶</span>
+      </div>
+      <div class="cta-final__headlines" data-node-id="124:101">
+        <h2 class="cta-final__title-1" data-node-id="124:103">Pare de publicar no escuro.</h2>
+        <h2 class="cta-final__title-2 gold-text" data-node-id="124:105">Comece a criar com intenção.</h2>
+      </div>
+      <p class="cta-final__description" data-node-id="124:107">
+        Estrutura, direção e prática para transformar sua forma de produzir conteúdo.
+      </p>
+      <div class="cta-final__btn-wrap" data-node-id="124:109">
+        <a href="#hero" class="btn btn--gold cta-final__btn" data-node-id="124:110">
+          <span data-node-id="124:111">Quero aplicar para o PlayViral</span>
+          <img src="assets/icons/arrow.svg" alt="" width="16" height="16" data-node-id="124:112" />
+        </a>
+      </div>
+      <p class="cta-final__micro" data-node-id="124:115">Preencha sua aplicação para conhecer os próximos passos.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    FOOTER
+  ============================================================ -->
+  <!-- ============================================================
+    FOOTER (Figma node 124:155)
+  ============================================================ -->
+  <footer class="footer" data-node-id="124:155">
+    <div class="container footer__container" data-node-id="124:157">
+
+      <div class="footer__brand" data-node-id="124:158">
+        <p class="footer__logo" data-node-id="124:160">
+          <span class="footer__logo-play">PLAY</span><span class="footer__logo-viral">VIRAL</span>
+        </p>
+        <p class="footer__copyright" data-node-id="124:162">© 2026 PlayViral. Todos os direitos reservados.</p>
+      </div>
+
+      <nav class="footer__nav" data-node-id="124:163" aria-label="Links do rodapé">
+        <div class="footer__nav-row">
+          <a href="#hero" class="footer__nav-link" data-node-id="124:165">Sobre</a>
+          <a href="#positioning" class="footer__nav-link" data-node-id="124:167">Método</a>
+          <a href="#method" class="footer__nav-link" data-node-id="124:169">O que você recebe</a>
+          <a href="#community" class="footer__nav-link" data-node-id="124:171">Comunidade</a>
+        </div>
+        <div class="footer__nav-row footer__nav-row--sub">
+          <a href="#testimonials" class="footer__nav-link" data-node-id="124:173">Depoimentos</a>
+          <a href="#faq" class="footer__nav-link" data-node-id="124:175">Perguntas</a>
+        </div>
+      </nav>
+
+      <div class="footer__aside" data-node-id="124:176">
+        <div class="footer__social" data-node-id="124:177" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram" class="footer__social-link" data-node-id="124:178">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="footer__social-link" data-node-id="124:180">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="footer__social-link" data-node-id="124:182">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="#" aria-label="X" class="footer__social-link" data-node-id="124:184">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16m0-16L4 20"></path></svg>
+          </a>
+        </div>
+        <div class="footer__taglines" data-node-id="124:186">
+          <p class="footer__tagline-item" data-node-id="124:188">Estratégia</p>
+          <p class="footer__tagline-item" data-node-id="124:190">Conteúdo</p>
+          <p class="footer__tagline-item footer__tagline-item--gold" data-node-id="124:192">Resultados reais</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

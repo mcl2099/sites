@@ -1,0 +1,9 @@
+{
+  "name": "playviral",
+  "version": "1.0.0",
+  "description": "PlayViral editorial digital experience with automated FTP deploy",
+  "private": true,
+  "scripts": {
+    "deploy": "python deploy.py"
+  }
+}

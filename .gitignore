@@ -1,0 +1,29 @@
+# Environment & Credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+
+# Dependencies & Build
+node_modules/
+dist/
+build/
+__pycache__/
+
+# Large Raw References & Temporary Files
+Desktop1920.jpg
+test-page/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Archives & Temporary Screenshots
+*.zip
+screenshot*.png
+polished_*.png
+final_*.png
