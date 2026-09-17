@@ -167,9 +167,14 @@ def main():
     slug = re.sub(r"[^a-z0-9\-_]", "-", slug).strip("-")
     if not slug:
         print("❌ Erro: O slug informado é inválido.")
-        sys.exit(1)
-
     local_path = sys.argv[2] if len(sys.argv) > 2 else "."
+    if local_path == ".":
+        # Auto-detecta pasta com nome do slug (ex: PlayViral)
+        candidates = [slug, slug.replace("_", "-"), slug.replace("-", "_"), slug.replace("_", ""), slug.replace("-", "")]
+        for d in Path(".").iterdir():
+            if d.is_dir() and d.name.lower() in [c.lower() for c in candidates]:
+                local_path = str(d)
+                break
 
     ftp_host = os.environ.get("FTP_HOST", "82.25.67.235")
     ftp_port = int(os.environ.get("FTP_PORT", 21))

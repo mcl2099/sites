@@ -1,9 +1,10 @@
 {
-  "name": "playviral",
+  "name": "sites",
   "version": "1.0.0",
-  "description": "PlayViral editorial digital experience with automated FTP deploy",
+  "description": "Repositório de sites e landing pages — Marcelo Web Designer",
   "private": true,
   "scripts": {
-    "deploy": "python deploy.py"
+    "deploy": "python deploy.py",
+    "deploy:playviral": "python deploy.py play_viral PlayViral"
   }
 }
