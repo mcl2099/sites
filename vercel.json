@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/PlayViral/index.html" },
+    { "source": "/assets/(.*)", "destination": "/PlayViral/assets/$1" },
+    { "source": "/css/(.*)", "destination": "/PlayViral/css/$1" },
+    { "source": "/js/(.*)", "destination": "/PlayViral/js/$1" }
+  ]
+}
