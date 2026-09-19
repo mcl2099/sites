@@ -2110,85 +2110,155 @@
     .section-expert {
       position: relative;
       background-color: var(--bg-dark);
-      padding: 60px 24px 70px;
+      padding: 100px 24px 85px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      overflow: hidden;
+      overflow: visible;
     }
 
-    .expert-card-shell {
-      position: relative;
-      z-index: 2;
-      max-width: 1164px;
-      width: 100%;
-      padding: 6px;
-      border-radius: 38px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(231, 207, 143, 0.22);
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.85);
-    }
-
+    /* Card Oficial Figma (Node 160:359) */
     .expert-card {
       position: relative;
+      max-width: 1180px;
       width: 100%;
-      background: #FAF8F5;
-      border-radius: calc(38px - 6px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.95);
-      padding: 56px 64px;
+      background: #F3F2F0;
+      border-radius: 24px;
+      box-shadow: 0px 40px 120px -30px rgba(0, 0, 0, 0.9);
+      overflow: visible; /* Permite a cabeça de Valéria ultrapassar o topo */
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    /* Aba de Acento Dourado Superior Oficial (Node 160:482) */
+    .expert-top-gold-tab {
+      position: absolute;
+      top: 0;
+      left: 36px;
+      width: 112px;
+      height: 5px;
+      border-radius: 0 0 6px 6px;
+      background: linear-gradient(90deg, #C8A44D 0%, #E7CF8F 100%);
+      z-index: 5;
+    }
+
+    .expert-card-body {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      padding: 60px 48px 28px 56px;
+      position: relative;
     }
 
     .expert-left {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      justify-content: center;
+      z-index: 2;
     }
 
-    .expert-tag-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mirante);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #9C6B2B;
+    .expert-heading-wrap {
+      max-width: 520px;
     }
 
     .expert-title {
-      font-family: var(--font-mirante);
-      font-size: 38px;
-      line-height: 1.2;
-      color: #1A120C;
-      font-weight: 600;
+      font-family: var(--font-manrope);
+      font-size: clamp(32px, 3.5vw, 48px);
+      line-height: 1.08;
+      font-weight: 800;
+      color: #131313;
+      letter-spacing: -0.025em;
+    }
+
+    .expert-desc-wrap {
+      margin-top: 24px;
+      max-width: 440px;
     }
 
     .expert-bio {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #5A4738;
-      max-width: 500px;
+      font-family: var(--font-manrope);
+      font-size: 16px;
+      line-height: 1.65;
+      color: #726255;
     }
 
-    .expert-brand-badge {
-      display: flex;
+    /* Logo PillarLockup Oficial (Node 160:366 - 160:379) */
+    .expert-pillar-logo {
+      display: inline-flex;
       align-items: center;
-      gap: 16px;
-      margin-top: 12px;
+      gap: 12px;
+      margin-top: 40px;
     }
 
-    .expert-brand-badge img {
-      height: 38px;
-      width: auto;
+    .expert-logo-icon {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
     }
 
+    .expert-logo-text-stack {
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-manrope);
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 2.34px;
+      line-height: 1;
+      color: #131313;
+    }
+
+    /* Coluna Direita com Composição Visual e Head Overflow */
     .expert-right-visual {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      min-height: 480px;
+    }
+
+    /* Marca d'Água Monumental "Play" (Node 160:381) */
+    .expert-watermark-play {
+      position: absolute;
+      left: -60px;
+      top: 15px;
+      font-family: var(--font-manrope);
+      font-weight: 800;
+      font-size: clamp(140px, 14vw, 220px);
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      color: rgba(207, 207, 207, 0.38);
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* Carimbo Circular Rotativo Dourado (Node 289:1087) */
+    .expert-circular-stamp {
+      position: absolute;
+      top: -30px;
+      right: 15px;
+      width: 160px;
+      height: 160px;
+      pointer-events: none;
+      z-index: 2;
+      animation: rotateStamp 22s linear infinite;
+    }
+
+    @keyframes rotateStamp {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Foto da Mentora com Overflow Superior */
+    .expert-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin-top: -85px; /* Faz o topo da cabeça ultrapassar o card */
+      z-index: 3;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -2196,10 +2266,13 @@
 
     .expert-photo {
       width: 100%;
-      max-width: 440px;
       height: auto;
+      max-height: 570px;
       object-fit: contain;
-      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+      display: block;
+      -webkit-mask-image: linear-gradient(to bottom, #000000 68%, rgba(0, 0, 0, 0.4) 85%, transparent 98%);
+      mask-image: linear-gradient(to bottom, #000000 68%, rgba(0, 0, 0, 0.4) 85%, transparent 98%);
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.1));
       transition: transform 0.5s var(--ease-out-expo);
     }
 
@@ -2207,61 +2280,106 @@
       transform: scale(1.02);
     }
 
-    .expert-role-badge {
+    /* Floating NameCard Oficial Figma (Node 160:384) */
+    .expert-namecard {
       position: absolute;
-      bottom: 20px;
-      right: 10px;
-      background: #1A0F08;
-      color: #FFFFFF;
-      border: 1px solid #C8A44D;
-      border-radius: 12px;
-      padding: 12px 20px;
+      bottom: 24px;
+      right: 32px;
+      z-index: 5;
+      background: #222222;
+      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.05), 0px 10px 30px -14px rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
       gap: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      padding: 10px 18px;
     }
 
-    .expert-role-badge-text {
+    .expert-namecard-icon-wrap {
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .expert-namecard-icon {
+      width: 22px;
+      height: auto;
+      display: block;
+    }
+
+    .expert-namecard-divider {
+      width: 1px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .expert-namecard-text {
       display: flex;
       flex-direction: column;
+      gap: 2px;
     }
 
-    .expert-role-name {
-      font-family: var(--font-mirante);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .expert-namecard-name {
+      font-family: var(--font-manrope);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.35px;
+      color: #F6F4EF;
+      line-height: 1.25;
+      white-space: nowrap;
     }
 
-    .expert-role-title {
-      font-size: 11px;
-      color: #C8B9A6;
+    .expert-namecard-role {
+      font-family: var(--font-inter);
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.25;
+      white-space: nowrap;
     }
 
+    /* Faixa Dourada com Ticker Marquee Oficial Figma (Node 160:395) */
     .expert-ribbon-strip {
-      background: var(--gold-gradient);
       width: 100%;
-      max-width: 1152px;
-      margin-top: 24px;
-      padding: 12px 24px;
-      border-radius: 12px;
+      height: 27px;
+      background: var(--gold-gradient);
+      border-radius: 0 0 24px 24px;
       overflow: hidden;
       display: flex;
-      justify-content: center;
-      z-index: 2;
-      box-shadow: 0 8px 20px rgba(200, 164, 77, 0.25);
+      align-items: center;
+      z-index: 4;
     }
 
-    .expert-ribbon-text {
-      font-family: var(--font-mirante);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #1A0F08;
+    .expert-ribbon-track {
+      display: flex;
+      width: max-content;
+      animation: expertRibbonMarquee 28s linear infinite;
+    }
+
+    .expert-ribbon-content {
+      display: flex;
+      align-items: center;
       white-space: nowrap;
+      font-family: var(--font-manrope);
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 3.5px;
+      color: rgba(0, 0, 0, 0.85);
+      text-transform: uppercase;
+    }
+
+    .ribbon-dot {
+      margin: 0 16px;
+      color: rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes expertRibbonMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* ========================================================
@@ -2738,7 +2856,11 @@
       .testimonials-header-right { max-width: 100%; }
       .testimonials-nav-arrows { align-self: flex-start; }
       .testimonials-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-      .expert-card { grid-template-columns: 1fr; padding: 40px 32px; }
+      .expert-card-body { grid-template-columns: 1fr; padding: 48px 32px 24px; gap: 32px; }
+      .expert-photo-wrap { margin-top: 0; }
+      .expert-watermark-play { left: 20px; top: 0; }
+      .expert-circular-stamp { right: 10px; top: -15px; width: 130px; height: 130px; }
+      .expert-namecard { right: 20px; bottom: 20px; }
       .faq-container { grid-template-columns: 1fr; }
       .problem-grid { grid-template-columns: 1fr; }
       .card-problem { padding: 32px 24px; }
@@ -2772,7 +2894,25 @@
       .experience-feature-title { font-size: 14px; }
       .experience-feature-sub { font-size: 12px; }
       .experience-cta-wrap .hero-cta-btn { width: 100%; max-width: 380px; }
-      .expert-title { font-size: 26px; }
+
+      /* Impeccable Section 7 (A Mentora) Mobile Craft */
+      .section-expert { padding: 60px 16px 50px; }
+      .expert-card { border-radius: 20px; }
+      .expert-card-body { padding: 36px 20px 16px; gap: 28px; }
+      .expert-title { font-size: clamp(26px, 7vw, 34px); }
+      .expert-photo-wrap { max-width: 320px; margin: 0 auto; }
+      .expert-watermark-play { font-size: 110px; left: -10px; }
+      .expert-circular-stamp { width: 110px; height: 110px; top: -15px; right: -5px; }
+      .expert-namecard {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: -15px auto 16px;
+        width: 100%;
+        max-width: 270px;
+        justify-content: center;
+      }
+      .expert-ribbon-strip { border-radius: 0 0 20px 20px; }
       .faq-title { font-size: 30px; }
       .final-cta-title { font-size: 32px; }
       .final-cta-btn { width: 100%; padding: 14px 20px; font-size: 15px; }
@@ -3495,50 +3635,97 @@
        ======================================================== -->
   <section class="section-expert" id="mentora" data-node-id="160:357">
     <div class="bg-watermark bg-watermark-p" aria-hidden="true">P</div>
-    <div class="bg-watermark bg-watermark-v" aria-hidden="true">v</div>
+    <div class="bg-watermark bg-watermark-v" aria-hidden="true" data-node-id="382:252">v</div>
 
-    <div class="expert-card-shell reveal-on-scroll">
-      <div class="expert-card">
-        <div class="expert-left">
-          <div class="expert-tag-row">
-            <span class="gold-point"></span>
-            <span>NA PRÁTICA</span>
+    <!-- Container Principal Oficial Figma (Node 160:359) -->
+    <div class="expert-card reveal-on-scroll" data-node-id="160:359">
+      <!-- Aba de Acento Dourado Superior Oficial (Node 160:482) -->
+      <div class="expert-top-gold-tab" aria-hidden="true" data-node-id="160:482"></div>
+
+      <div class="expert-card-body" data-node-id="160:360">
+        <!-- Coluna Esquerda: Conteúdo Editorial e Assinatura -->
+        <div class="expert-left" data-node-id="160:361">
+          <div class="expert-heading-wrap" data-node-id="160:362">
+            <h2 class="expert-title" data-node-id="160:363">
+              Conteúdo estratégico precisa ser ensinado por quem vive o processo.
+            </h2>
           </div>
 
-          <h2 class="expert-title">
-            Conteúdo estratégico precisa ser ensinado por quem vive o processo.
-          </h2>
+          <div class="expert-desc-wrap" data-node-id="160:364">
+            <p class="expert-bio" data-node-id="160:365">
+              O PlayViral é conduzido por alguém que está todos os dias no mercado, criando, testando, analisando e acompanhando de perto o que realmente funciona. Mais do que teoria, aqui você aprende com experiência real.
+            </p>
+          </div>
 
-          <p class="expert-bio">
-            O PlayViral é conduzido por alguém que está todos os dias no mercado, criando, testando, analisando e acompanhando de perto o que realmente funciona. Mais do que teoria, aqui você aprende com experiência real.
-          </p>
-
-          <div class="expert-brand-badge">
-            <img src="./assets/logo-icon.png" alt="PlayViral Logo" />
-            <span class="brand-logo-text" style="font-size: 32px; color: #1A120C;">
-              Play<span class="gold-gradient-text">Viral</span>
-            </span>
+          <!-- Logo PillarLockup Oficial (Node 160:366 - 160:379) -->
+          <div class="expert-pillar-logo" data-node-id="160:367">
+            <img src="./assets/logo-icon.png" alt="PlayViral Logo" class="expert-logo-icon" data-node-id="160:368" />
+            <div class="expert-logo-text-stack" data-node-id="160:375">
+              <span class="expert-logo-play" data-node-id="160:377">PLAY</span>
+              <span class="expert-logo-viral" data-node-id="160:379">VIRAL</span>
+            </div>
           </div>
         </div>
 
-        <div class="expert-right-visual">
-          <img class="expert-photo" src="./assets/expert-valeria.png" alt="Valéria Mendes - Gestora e Mentora de Conteúdo" loading="lazy" decoding="async" />
-          <div class="expert-role-badge">
-            <img src="./assets/logo-icon.png" alt="" style="width: 24px; height: auto;" />
-            <div class="expert-role-badge-text">
-              <span class="expert-role-name">VALÉRIA MENDES</span>
-              <span class="expert-role-title">Gestora de Marketing & Criadora</span>
+        <!-- Coluna Direita: Composição Visual com Head Overflow e Watermark -->
+        <div class="expert-right-visual" data-node-id="160:380">
+          <!-- Tipografia Monumental "Play" de Fundo Oficial (Node 160:381) -->
+          <span class="expert-watermark-play" aria-hidden="true" data-node-id="160:381">Play</span>
+
+          <!-- Carimbo Circular Rotativo Dourado (Node 289:1087) -->
+          <div class="expert-circular-stamp" aria-hidden="true" data-node-id="289:1087">
+            <svg viewBox="0 0 160 160" width="160" height="160">
+              <path id="expertStampPath" d="M 80, 80 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" fill="none" />
+              <text fill="#DEC37D" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" letter-spacing="3px">
+                <textPath href="#expertStampPath">VALÉRIA MENDES • VALÉRIA MENDES • </textPath>
+              </text>
+            </svg>
+          </div>
+
+          <!-- Foto da Mentora com o topo da cabeça projetando-se acima do Card -->
+          <div class="expert-photo-wrap" data-node-id="160:382">
+            <img class="expert-photo" src="./assets/expert-valeria.png" alt="Valéria Mendes - Gestora e Mentora de Conteúdo" loading="lazy" decoding="async" />
+          </div>
+
+          <!-- Floating NameCard Oficial (Node 160:384) -->
+          <div class="expert-namecard" data-node-id="160:384">
+            <div class="expert-namecard-icon-wrap" data-node-id="160:385">
+              <img src="./assets/logo-icon.png" alt="" class="expert-namecard-icon" />
+            </div>
+            <div class="expert-namecard-divider" aria-hidden="true" data-node-id="160:388"></div>
+            <div class="expert-namecard-text" data-node-id="160:389">
+              <strong class="expert-namecard-name" data-node-id="160:391">VALÉRIA MENDES</strong>
+              <span class="expert-namecard-role" data-node-id="160:393">Gestora de Marketing</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Faixa Dourada com Assinatura da Marca -->
-    <div class="expert-ribbon-strip reveal-on-scroll" aria-hidden="true">
-      <span class="expert-ribbon-text">
-        PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL • PLAY VIRAL
-      </span>
+      <!-- Faixa Dourada com Ticker Marquee Contínuo Oficial (Node 160:395) -->
+      <div class="expert-ribbon-strip" aria-hidden="true" data-node-id="160:395">
+        <div class="expert-ribbon-track">
+          <div class="expert-ribbon-content">
+            <span>NEXT LEVEL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+          </div>
+          <div class="expert-ribbon-content" aria-hidden="true">
+            <span>NEXT LEVEL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+            <span>PLAY VIRAL</span><span class="ribbon-dot">•</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
