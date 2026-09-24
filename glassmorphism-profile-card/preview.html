@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Profile Card — 21st.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-accent: #DEC37D;
+      --primary-hover: #E7CF8F;
+      --bg-dark: #0A0508;
+      --text-main: #FFFFFF;
+      --text-muted: rgba(255, 255, 255, 0.65);
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --glass-highlight: rgba(255, 255, 255, 0.4);
+      --glass-blur: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+      padding: 1.5rem 1rem;
+    }
+
+    /* Ambient Orbs */
+    .background-decorations {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      animation: floatOrb 12s infinite alternate ease-in-out;
+    }
+
+    .orb-1 {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #833ab4 0%, #fd1d1d 60%, #fcb045 100%);
+      top: -60px;
+      left: 10%;
+      animation-duration: 14s;
+    }
+
+    .orb-2 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #DEC37D 0%, #C8A44D 50%, #591632 100%);
+      bottom: -50px;
+      right: 15%;
+      animation-duration: 16s;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, #4facfe 0%, #00f2fe 100%);
+      top: 40%;
+      left: 55%;
+      opacity: 0.3;
+      animation-duration: 10s;
+    }
+
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 35px) scale(1.12); }
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      opacity: 0.6;
+    }
+
+    /* Card Container com Perspectiva 3D */
+    .card-container {
+      perspective: 1200px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      position: relative;
+      width: 100%;
+      background: var(--glass-bg);
+      backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 
+        0 30px 60px -15px rgba(0, 0, 0, 0.6),
+        0 10px 20px -5px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px var(--glass-highlight);
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(222, 195, 125, 0.45);
+      box-shadow: 
+        0 35px 75px -15px rgba(0, 0, 0, 0.75),
+        0 0 30px rgba(222, 195, 125, 0.15),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    }
+
+    .glare {
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      pointer-events: none;
+      opacity: 0;
+      mix-blend-mode: overlay;
+      transition: opacity 0.3s ease;
+      z-index: 5;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #E2E8F0;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #10B981;
+      box-shadow: 0 0 10px #10B981;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .icon-menu-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .icon-menu-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px auto;
+    }
+
+    .avatar-ring {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 3.5px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(222, 195, 125, 0.7), rgba(255, 255, 255, 0.15));
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .verified-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 22px;
+      height: 22px;
+      background: #3B82F6;
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #FFFFFF;
+      margin-bottom: 3px;
+    }
+
+    .profile-handle {
+      font-size: 12.5px;
+      color: var(--primary-accent);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .profile-bio {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .stats-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 12px 8px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-size: 16px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+    }
+
+    .stat-label {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .btn-primary {
+      flex: 1;
+      gap: 8px;
+      padding: 11px 18px;
+      background: linear-gradient(135deg, rgba(231, 207, 143, 0.92), rgba(200, 164, 77, 0.95));
+      color: #12090E;
+      box-shadow: 
+        0 10px 20px -5px rgba(222, 195, 125, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #E7CF8F, #DEC37D);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px -5px rgba(222, 195, 125, 0.45), inset 0 1px 1px #FFFFFF;
+    }
+
+    .btn-secondary {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .social-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(222, 195, 125, 0.5);
+      transform: translateY(-2px) scale(1.06);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Orbs -->
+  <div class="background-decorations">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="card-container" id="cardContainer">
+    <div class="glass-card" id="glassCard">
+      <div class="glare" id="cardGlare"></div>
+
+      <div class="card-header">
+        <span class="badge-status">
+          <span class="pulse-dot"></span>
+          Disponível
+        </span>
+        <button class="icon-menu-btn" title="Mais opções" aria-label="Opções">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+
+      <div class="avatar-wrapper">
+        <div class="avatar-ring">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Foto de Perfil" class="avatar-img">
+        </div>
+        <div class="verified-badge" title="Criador Verificado">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <h2 class="profile-name">Valéria Mendes</h2>
+        <p class="profile-handle">@valeriamendes • Estrategista Visual</p>
+        <p class="profile-bio">
+          Arquiteta de retenção de audiência e narrativa de alto ticket. Transformando vídeos curtos em ecossistemas de vendas previsíveis.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-value">185K</span>
+          <span class="stat-label">Seguidores</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">+218%</span>
+          <span class="stat-label">Retenção</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">4.9 ★</span>
+          <span class="stat-label">Avaliação</span>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button class="btn btn-primary" id="btnFollow">
+          <span class="btn-text">Conectar</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+        <button class="btn btn-secondary" id="btnMessage" title="Enviar Mensagem">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="social-links">
+        <a href="#" class="social-btn" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="#" class="social-btn" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="#" class="social-btn" title="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const cardContainer = document.getElementById('cardContainer');
+    const card = document.getElementById('glassCard');
+    const glare = document.getElementById('cardGlare');
+    const btnFollow = document.getElementById('btnFollow');
+
+    let bounds;
+    function updateBounds() { bounds = card.getBoundingClientRect(); }
+
+    cardContainer.addEventListener('mouseenter', () => {
+      updateBounds();
+      card.style.transition = 'transform 0.1s ease-out, box-shadow 0.3s ease';
+    });
+
+    cardContainer.addEventListener('mousemove', (e) => {
+      if (!bounds) updateBounds();
+      const leftX = e.clientX - bounds.x;
+      const topY = e.clientY - bounds.y;
+      const center = { x: leftX - bounds.width / 2, y: topY - bounds.height / 2 };
+
+      const rotateX = -(center.y / (bounds.height / 2)) * 10;
+      const rotateY = (center.x / (bounds.width / 2)) * 10;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+      const glareX = (leftX / bounds.width) * 100;
+      const glareY = (topY / bounds.height) * 100;
+      glare.style.opacity = '1';
+      glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 70%)`;
+    });
+
+    cardContainer.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease';
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      glare.style.opacity = '0';
+    });
+
+    let isFollowing = false;
+    btnFollow.addEventListener('click', (e) => {
+      e.preventDefault();
+      isFollowing = !isFollowing;
+      if (isFollowing) {
+        btnFollow.innerHTML = '<span class="btn-text">Conectado ✓</span>';
+        btnFollow.style.background = 'rgba(255, 255, 255, 0.18)';
+        btnFollow.style.color = '#FFFFFF';
+      } else {
+        btnFollow.innerHTML = '<span class="btn-text">Conectar</span>';
+        btnFollow.style.background = 'linear-gradient(135deg, rgba(231, 207, 143, 0.92), rgba(200, 164, 77, 0.95))';
+        btnFollow.style.color = '#12090E';
+      }
+    });
+  </script>
+</body>
+</html>

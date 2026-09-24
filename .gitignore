@@ -15,6 +15,14 @@ __pycache__/
 # Large Raw References & Temporary Files
 Desktop1920.jpg
 test-page/
+scratch/
+scratch_*
+*.mp4
+page_desktop_full.png
+page_mobile_full.png
+page_mobile_full_2x.png
+.agents/
+skills-lock.json
 
 # IDE & OS
 .vscode/

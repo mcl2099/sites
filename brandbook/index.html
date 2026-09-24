@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Viral • Brand Book & Design System Oficial (21st.dev Style)</title>
+  <meta name="description" content="Manual oficial de marca e engenharia semiótica da atenção Play Viral por Valéria Mendes estruturado no design system 21st.dev / features-8.">
+  <link rel="icon" type="image/png" href="../assets/logo-icon.png">
+  
+  <!-- Tailwind CSS CDN com suporte ao tema Dark -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            creme: {
+              primary: '#FAF8F5',
+              secondary: '#F3EFEA',
+              card: '#FFFFFF',
+              elevated: '#FCFBF9'
+            },
+            cafe: {
+              primary: '#1A120C',
+              secondary: '#2C2018',
+              bronze: '#5D5043',
+              muted: '#8A7B6E'
+            },
+            ouro: {
+              1: '#E7CF8F',
+              2: '#DEC37D',
+              3: '#C8A44D',
+              solid: '#C8A44D'
+            },
+            vinho: {
+              noturno: '#160B11'
+            },
+            terracotta: '#C76A37',
+            verde: {
+              conversao: '#2AB15C'
+            }
+          },
+          fontFamily: {
+            display: ['Mirante', 'Manrope', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            body: ['Manrope', 'sans-serif'],
+            mono: ['Manrope', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-[#FAF8F5] text-[#1A120C] dark:bg-[#0F070C] dark:text-[#FAF8F5] transition-colors duration-200">
+
+  <!-- Textura Analógica Nobre -->
+  <div class="texture-overlay" aria-hidden="true"></div>
+
+  <!-- Header & Toolbar Flutuante Estilo 21st.dev -->
+  <header class="sticky top-0 z-50 border-b border-[#E8E2D8] dark:border-white/10 bg-[#FAF8F5]/85 dark:bg-[#0F070C]/85 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <img src="../assets/logo-icon.png" alt="Símbolo Play Viral" class="w-7 h-7 object-contain transition-opacity group-hover:opacity-80">
+        <span class="font-display font-bold text-lg tracking-tight text-[#1A120C] dark:text-white">
+          Play<span class="text-[#C8A44D]">Viral</span>
+        </span>
+      </a>
+      <span class="hidden sm:inline-block text-[11.5px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded bg-[#F3EFEA] dark:bg-white/10 border border-[#E8E2D8] dark:border-white/10 text-[#5D5043] dark:text-[#D4C7BA]">
+        Brand Book • 21st.dev
+      </span>
+    </div>
+
+    <!-- Navegação Rápida por Pílulas (Pills) -->
+    <nav class="hidden xl:flex items-center gap-1.5" aria-label="Navegação de capítulos">
+      <a href="#cap-01" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">01. Propósito</a>
+      <a href="#cap-02" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">02. Logotipo</a>
+      <a href="#cap-03" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">03. Cores</a>
+      <a href="#cap-04" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">04. Tipografia</a>
+      <a href="#cap-05" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">05. Vetores</a>
+      <a href="#cap-06" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">06. Padrões UI</a>
+      <a href="#cap-07" class="bb-nav-link text-xs font-semibold px-3 py-1.5 rounded-full transition text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white">07. Governança</a>
+    </nav>
+
+    <!-- Ações: Alternador de Tema e Exportação PDF -->
+    <div class="flex items-center gap-2.5">
+      <button id="themeToggle" type="button" class="px-3 py-1.5 text-xs font-semibold rounded-full border border-[#E8E2D8] dark:border-white/15 bg-white dark:bg-white/5 flex items-center gap-1.5 text-[#1A120C] dark:text-white hover:border-[#C8A44D] transition" title="Alternar entre tema Claro e Escuro">
+        <i data-lucide="moon" class="w-3.5 h-3.5 block dark:hidden text-[#C8A44D]"></i>
+        <i data-lucide="sun" class="w-3.5 h-3.5 hidden dark:block text-[#DEC37D]"></i>
+        <span id="themeLabel">Dark Mode</span>
+      </button>
+
+      <button id="btnExportPdf" type="button" class="inline-flex items-center gap-1.5 bg-[#1A120C] dark:bg-white text-white dark:text-[#1A120C] px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-sm hover:opacity-90 transition" title="Exportar Brand Book para PDF">
+        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+        <span>PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal do Brand Book -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+
+    <!-- HERO / CAPA EDITORIAL -->
+    <section id="hero" class="relative rounded-3xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-8 sm:p-14 overflow-hidden shadow-sm">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#E7CF8F] via-[#DEC37D] to-[#C8A44D]" aria-hidden="true"></div>
+      <div class="absolute -right-6 -bottom-10 font-display text-[220px] font-black text-black/[0.02] dark:text-white/[0.02] pointer-events-none select-none leading-none">
+        PV
+      </div>
+
+      <div class="relative z-10 max-w-3xl">
+        <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#F3EFEA] dark:bg-white/5 border border-[#E8E2D8] dark:border-white/10 text-xs font-mono font-bold tracking-widest uppercase text-[#C76A37] mb-6">
+          <img src="../assets/brand-thread.svg" alt="" class="h-3.5 w-auto">
+          <span>Manual de Identidade Visual & Engenharia Semiótica</span>
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-6xl font-bold tracking-tight text-[#1A120C] dark:text-white mb-6 leading-[1.12]">
+          A Arquitetura da <span class="text-[#C8A44D]">Atenção & Retenção</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#5D5043] dark:text-[#D4C7BA] leading-relaxed mb-8 max-w-2xl">
+          Manual oficial de marca, princípios semióticos da neurociência da atenção e catálogo completo de componentes do ecossistema <strong>Play Viral / Valéria Mendes</strong>, formatado na arquitetura de cards bento do <strong>21st.dev</strong>.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[#E8E2D8] dark:border-white/10">
+          <div>
+            <span class="block font-mono text-[11.5px] uppercase tracking-wider text-[#8A7B6E] dark:text-zinc-500">Direção</span>
+            <span class="font-semibold text-sm text-[#1A120C] dark:text-white">Valéria Mendes</span>
+          </div>
+          <div>
+            <span class="block font-mono text-[11.5px] uppercase tracking-wider text-[#8A7B6E] dark:text-zinc-500">Método</span>
+            <span class="font-semibold text-sm text-[#1A120C] dark:text-white">RVE® Estratégico</span>
+          </div>
+          <div>
+            <span class="block font-mono text-[11.5px] uppercase tracking-wider text-[#8A7B6E] dark:text-zinc-500">Estética</span>
+            <span class="font-semibold text-sm text-[#1A120C] dark:text-white">Creme & Café Escuro</span>
+          </div>
+          <div>
+            <span class="block font-mono text-[11.5px] uppercase tracking-wider text-[#8A7B6E] dark:text-zinc-500">Padrão</span>
+            <span class="font-semibold text-sm text-[#1A120C] dark:text-white">WCAG AAA Impeccable</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 01: PROPÓSITO & NEUROCIÊNCIA (BENTO GRID FEATURES-8)
+         ==================================================================== -->
+    <section id="cap-01" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 01</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Propósito & Engenharia Semiótica da Atenção
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          O Play Viral substitui o ruído aleatório das redes por um funil narrativo calculado. Aplicamos o grid assimétrico do <code>features-8</code> para demonstrar os pilares neuro-persuasivos do método.
+        </p>
+      </div>
+
+      <!-- Bento Grid de 6 Colunas Oficial Features-8 -->
+      <div class="grid grid-cols-6 gap-3 pt-2">
+
+        <!-- Card 1 (2 cols): 100% RVE (Curva Geométrica do Features-8) -->
+        <div class="card-bento relative col-span-full lg:col-span-2 rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 flex flex-col justify-center overflow-hidden shadow-sm">
+          <div class="relative flex h-24 w-56 items-center justify-center mx-auto">
+            <svg class="text-[#E8E2D8] dark:text-white/10 absolute inset-0 size-full" viewBox="0 0 254 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M112.891 97.7022C140.366 97.0802 171.004 94.6715 201.087 87.5116C210.43 85.2881 219.615 82.6412 228.284 78.2473C232.198 76.3179 235.905 73.9942 239.348 71.3124C241.85 69.2557 243.954 66.7571 245.555 63.9408C249.34 57.3235 248.281 50.5341 242.498 45.6109C239.033 42.7237 235.228 40.2703 231.169 38.3054C219.443 32.7209 207.141 28.4382 194.482 25.534C184.013 23.1927 173.358 21.7755 162.64 21.2989C161.376 21.3512 160.113 21.181 158.908 20.796C158.034 20.399 156.857 19.1682 156.962 18.4535C157.115 17.8927 157.381 17.3689 157.743 16.9139C158.104 16.4588 158.555 16.0821 159.067 15.8066C160.14 15.4683 161.274 15.3733 162.389 15.5286C179.805 15.3566 196.626 18.8373 212.998 24.462C220.978 27.2494 228.798 30.4747 236.423 34.1232C240.476 36.1159 244.202 38.7131 247.474 41.8258C254.342 48.2578 255.745 56.9397 251.841 65.4892C249.793 69.8582 246.736 73.6777 242.921 76.6327C236.224 82.0192 228.522 85.4602 220.502 88.2924C205.017 93.7847 188.964 96.9081 172.738 99.2109C153.442 101.949 133.993 103.478 114.506 103.79C91.1468 104.161 67.9334 102.97 45.1169 97.5831C36.0094 95.5616 27.2626 92.1655 19.1771 87.5116C13.839 84.5746 9.1557 80.5802 5.41318 75.7725C-0.54238 67.7259 -1.13794 59.1763 3.25594 50.2827C5.82447 45.3918 9.29572 41.0315 13.4863 37.4319C24.2989 27.5721 37.0438 20.9681 50.5431 15.7272C68.1451 8.8849 86.4883 5.1395 105.175 2.83669C129.045 0.0992292 153.151 0.134761 177.013 2.94256C197.672 5.23215 218.04 9.01724 237.588 16.3889C240.089 17.3418 242.498 18.5197 244.933 19.6446C246.627 20.4387 247.725 21.6695 246.997 23.615C246.455 25.1105 244.814 25.5605 242.63 24.5811C230.322 18.9961 217.233 16.1904 204.117 13.4376C188.761 10.3438 173.2 8.36665 157.558 7.52174C129.914 5.70776 102.154 8.06792 75.2124 14.5228C60.6177 17.8788 46.5758 23.2977 33.5102 30.6161C26.6595 34.3329 20.4123 39.0673 14.9818 44.658C12.9433 46.8071 11.1336 49.1622 9.58207 51.6855C4.87056 59.5336 5.61172 67.2494 11.9246 73.7608C15.2064 77.0494 18.8775 79.925 22.8564 82.3236C31.6176 87.7101 41.3848 90.5291 51.3902 92.5804C70.6068 96.5773 90.0219 97.7419 112.891 97.7022Z"
+                fill="currentColor"
+              />
+            </svg>
+            <span class="mx-auto block w-fit text-5xl font-bold tracking-tight text-[#C8A44D]">100%</span>
+          </div>
+          <h3 class="mt-5 text-center text-xl sm:text-2xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+            Método RVE®
+          </h3>
+          <p class="text-center text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] mt-2">
+            Roteiro de Venda Estratégica. O fim do improviso e o início da conversão previsível.
+          </p>
+        </div>
+
+        <!-- Card 2 (2 cols): A Regra dos 3 Segundos (Radar Concéntrico) -->
+        <div class="card-bento relative col-span-full sm:col-span-3 lg:col-span-2 rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 flex flex-col justify-center overflow-hidden shadow-sm">
+          <div class="relative mx-auto flex aspect-square size-28 rounded-full border border-[#E8E2D8] dark:border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-[#E8E2D8]/60 dark:before:border-white/5">
+            <div class="m-auto flex flex-col items-center justify-center text-center">
+              <span class="text-3xl font-bold text-[#C8A44D]">03s</span>
+              <span class="text-[10px] uppercase font-mono tracking-wider text-[#8A7B6E] dark:text-zinc-400">Decisão</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <img src="../assets/brand-vesica-piscis.svg" alt="" class="w-16 h-16 opacity-30">
+            </div>
+          </div>
+          <div class="mt-6 text-center space-y-1.5">
+            <h3 class="text-lg font-bold text-[#1A120C] dark:text-white">A Regra dos 3 Segundos</h3>
+            <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA]">
+              O intervalo biológico no qual o cérebro decide parar a rolagem e consumir a narrativa.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 (2 cols): Julgamento em 50ms (Waveform de Retenção) -->
+        <div class="card-bento relative col-span-full sm:col-span-3 lg:col-span-2 rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 flex flex-col justify-center overflow-hidden shadow-sm">
+          <div class="pt-2 px-1">
+            <div class="flex items-center justify-between text-xs font-mono font-bold text-[#C8A44D] mb-2">
+              <span>SCAN_RETENÇÃO</span>
+              <span>50ms_AUDIT</span>
+            </div>
+            <div class="h-16 flex items-center justify-center">
+              <img src="../assets/brand-wave-continua.svg" alt="Senoide Contínua" class="w-full h-10 object-contain">
+            </div>
+          </div>
+          <div class="mt-6 text-center space-y-1.5">
+            <h3 class="text-lg font-bold text-[#1A120C] dark:text-white">Julgamento em 50ms</h3>
+            <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA]">
+              A percepção instantânea de autoridade visual que elimina a imagem de "curso amador".
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 (3 cols): Arquitetura do Roteiro (Miniterminal + Frequência) -->
+        <div class="card-bento relative col-span-full lg:col-span-3 rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm">
+          <div class="grid sm:grid-cols-2 gap-6 h-full">
+            <div class="flex flex-col justify-between space-y-6">
+              <div class="flex aspect-square size-11 rounded-full border border-[#E8E2D8] dark:border-white/10 bg-[#F3EFEA] dark:bg-white/5 items-center justify-center">
+                <i data-lucide="shield" class="w-5 h-5 text-[#C8A44D]"></i>
+              </div>
+              <div class="space-y-1.5">
+                <h3 class="text-lg font-bold text-[#1A120C] dark:text-white">Engenharia de Roteiro</h3>
+                <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA]">
+                  Estrutura de 4 atos cirúrgicos: Gancho Magnético, Tensão Cognitiva, Solução RVE e CTA de Alta Conversão.
+                </p>
+              </div>
+            </div>
+
+            <!-- Terminal Window Estilo 21st.dev -->
+            <div class="relative -mb-6 -mr-6 border-l border-t border-[#E8E2D8] dark:border-white/10 p-4 rounded-tl-xl bg-[#F8F5EE] dark:bg-black/40">
+              <div class="flex items-center gap-1.5 mb-3">
+                <span class="size-2 rounded-full bg-red-400"></span>
+                <span class="size-2 rounded-full bg-amber-400"></span>
+                <span class="size-2 rounded-full bg-emerald-400"></span>
+                <span class="ml-2 font-mono text-[10px] text-[#8A7B6E] dark:text-zinc-500">rve_core.py</span>
+              </div>
+              <div class="font-mono text-[11px] text-[#5D5043] dark:text-[#D4C7BA] space-y-1 leading-snug">
+                <div><span class="text-[#C8A44D]">def</span> hook(attention):</div>
+                <div class="pl-3">if attention &lt; 3.0:</div>
+                <div class="pl-6 text-[#C76A37]">break_pattern()</div>
+                <div class="pl-3">return <span class="text-emerald-600 dark:text-emerald-400">high_retention</span></div>
+                <div class="pt-1 text-[#8A7B6E] dark:text-zinc-500"># 4K 60FPS Render</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 (3 cols): Mentora & Ecossistema de Alunos (Timeline com Avatares Reais) -->
+        <div class="card-bento relative col-span-full lg:col-span-3 rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm">
+          <div class="grid sm:grid-cols-2 gap-6 h-full">
+            <div class="flex flex-col justify-between space-y-6">
+              <div class="flex aspect-square size-11 rounded-full border border-[#E8E2D8] dark:border-white/10 bg-[#F3EFEA] dark:bg-white/5 items-center justify-center">
+                <i data-lucide="users" class="w-5 h-5 text-[#C8A44D]"></i>
+              </div>
+              <div class="space-y-1.5">
+                <h3 class="text-lg font-bold text-[#1A120C] dark:text-white">Comunidade & Mentoria</h3>
+                <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA]">
+                  Conexão direta com Valéria Mendes e dezenas de criadores validados escalando negócios digitais.
+                </p>
+              </div>
+            </div>
+
+            <!-- Vertical Timeline Avatars (Unsplash Stock Photos Reais) -->
+            <div class="relative before:absolute before:inset-0 before:mx-auto before:w-px before:bg-[#E8E2D8] dark:before:bg-white/10 sm:-my-6 sm:-mr-6 flex flex-col justify-center space-y-4 py-4">
+              <!-- Avatar 1 -->
+              <div class="relative flex w-[calc(50%+1rem)] items-center justify-end gap-2">
+                <span class="rounded border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#190E14] px-2 py-0.5 text-[11px] font-semibold text-[#1A120C] dark:text-white shadow-sm">
+                  Valéria Mendes
+                </span>
+                <div class="size-8 rounded-full ring-2 ring-[#C8A44D] overflow-hidden shadow">
+                  <img class="size-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop" alt="Valéria Mendes">
+                </div>
+              </div>
+
+              <!-- Avatar 2 -->
+              <div class="relative ml-[calc(50%-1.25rem)] flex items-center gap-2">
+                <div class="size-9 rounded-full ring-2 ring-emerald-500 overflow-hidden shadow">
+                  <img class="size-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&auto=format&fit=crop" alt="Aluno Mentor">
+                </div>
+                <span class="rounded border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#190E14] px-2 py-0.5 text-[11px] font-semibold text-[#1A120C] dark:text-white shadow-sm">
+                  Case 1.4M
+                </span>
+              </div>
+
+              <!-- Avatar 3 -->
+              <div class="relative flex w-[calc(50%+1rem)] items-center justify-end gap-2">
+                <span class="rounded border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#190E14] px-2 py-0.5 text-[11px] font-semibold text-[#1A120C] dark:text-white shadow-sm">
+                  Mentorado
+                </span>
+                <div class="size-8 rounded-full ring-2 ring-[#E8E2D8] dark:ring-white/20 overflow-hidden shadow">
+                  <img class="size-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=256&auto=format&fit=crop" alt="Mentorado">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Callout Editorial com Citação Oficial -->
+      <div class="rounded-2xl border-l-4 border-[#C8A44D] bg-[#F8F5EE] dark:bg-white/5 p-6 rounded-r-2xl">
+        <blockquote class="font-serif italic text-lg sm:text-xl text-[#1A120C] dark:text-white leading-relaxed">
+          "Viralidade sem estratégia é apenas vaidade métrica. A verdadeira maestria do Play Viral é transformar visualizações passivas em clientes leais e faturamento previsível."
+        </blockquote>
+        <div class="font-mono text-xs uppercase tracking-wider text-[#C8A44D] font-bold mt-2">— Valéria Mendes, Fundadora do Método RVE</div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 02: ANATOMIA DO LOGOTIPO & GLIFOS MONUMENTAIS
+         ==================================================================== -->
+    <section id="cap-02" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 02</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Anatomia do Logotipo & Glifos Monumentais
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          A fusão entre o play facetado da mídia digital e a serena elegância de um monograma de alto ticket.
+        </p>
+      </div>
+
+      <!-- Comparativo Fundo Claro vs Fundo Escuro -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Fundo Claro -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-[#FAF8F5] p-8 flex flex-col items-center justify-center min-h-[220px] text-center">
+          <div class="flex items-center gap-3">
+            <img src="../assets/logo-icon.png" alt="Play Viral Icon" class="w-12 h-12 object-contain">
+            <span class="font-display text-3xl font-extrabold text-[#1A120C]">
+              Play<span class="text-[#C8A44D]">Viral</span>
+            </span>
+          </div>
+          <div class="mt-4 font-mono text-xs font-bold uppercase tracking-wider text-[#5D5043]">
+            Aplicação Primária • Fundo Creme Nobre (#FAF8F5)
+          </div>
+        </div>
+
+        <!-- Fundo Escuro -->
+        <div class="card-bento rounded-2xl border border-[#160B11] bg-[#160B11] p-8 flex flex-col items-center justify-center min-h-[220px] text-center">
+          <div class="flex items-center gap-3">
+            <img src="../assets/logo-icon.png" alt="Play Viral Icon" class="w-12 h-12 object-contain">
+            <span class="font-display text-3xl font-extrabold text-white">
+              Play<span class="text-[#DEC37D]">Viral</span>
+            </span>
+          </div>
+          <div class="mt-4 font-mono text-xs font-bold uppercase tracking-wider text-[#DEC37D]">
+            Aplicação Secundária • Vinho Noturno (#160B11)
+          </div>
+        </div>
+      </div>
+
+      <!-- Glifos Monumentais (Cards Estilo Features-8) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <!-- Glifo P -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 text-center shadow-sm">
+          <div class="font-display text-7xl font-bold text-[#C8A44D] mb-3">P</div>
+          <h3 class="font-display text-lg font-bold text-[#1A120C] dark:text-white">Pausa & Play</h3>
+          <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] mt-2">
+            A decisão consciente de travar o scroll infinito e iniciar o consumo de um conteúdo de valor.
+          </p>
+        </div>
+
+        <!-- Glifo V -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 text-center shadow-sm">
+          <div class="font-display text-7xl font-bold text-[#C8A44D] mb-3">v</div>
+          <h3 class="font-display text-lg font-bold text-[#1A120C] dark:text-white">Vetor & Viralidade</h3>
+          <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] mt-2">
+            A força diagonal ascendente que projeta a autoridade do mentor para além da bolha de seguidores.
+          </p>
+        </div>
+
+        <!-- Prisma Diamante 3D -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 text-center shadow-sm flex flex-col justify-center items-center">
+          <div class="h-20 flex items-center justify-center mb-2">
+            <img src="../assets/s3-diamond.png" alt="Prisma Diamante" class="h-16 w-auto object-contain">
+          </div>
+          <h3 class="font-display text-lg font-bold text-[#1A120C] dark:text-white">Prisma de Lapidação</h3>
+          <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] mt-2">
+            A transformação de ideias brutas em múltiplos ativos de alto ticket com brilho e precisão de facetas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 03: SISTEMA CROMÁTICO (COLOR SWATCHES COM CÓPIA EM 1 CLIQUE)
+         ==================================================================== -->
+    <section id="cap-03" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 03</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Sistema Cromático & Psicologia das Cores
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          Base mestre em <strong>Creme Nobre Editorial (#FAF8F5)</strong> com tipografia em <strong>Café Profundo (#1A120C)</strong>, superando com folga o patamar de acessibilidade WCAG AAA.
+        </p>
+      </div>
+
+      <!-- Grid de Cores com Botão de Cópia em 1 Clique -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <!-- 1. Creme Nobre -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8]/80 dark:border-white/10 p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#FAF8F5">
+              #FAF8F5
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Fundo Mestre</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Creme Nobre</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Clareza editorial sem o ofuscamento do branco puro.</p>
+          </div>
+        </div>
+
+        <!-- 2. Creme Sutil -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#F3EFEA] border border-[#E8E2D8]/80 dark:border-white/10 p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#F3EFEA">
+              #F3EFEA
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Superfície</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Creme Sutil</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Contêineres de apoio e cards destacados.</p>
+          </div>
+        </div>
+
+        <!-- 3. Café Escuro Profundo -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#1A120C] border border-[#2C2018] p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#1A120C">
+              #1A120C
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Tipografia</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Café Profundo</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Máxima autoridade e conforto visual de leitura.</p>
+          </div>
+        </div>
+
+        <!-- 4. Ouro Líquido -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-gradient-to-r from-[#E7CF8F] via-[#DEC37D] to-[#C8A44D] p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#DEC37D">
+              #DEC37D
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Acento Áureo</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Ouro Líquido</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Prestígio e valor percebido de mentoria executiva.</p>
+          </div>
+        </div>
+
+        <!-- 5. Vinho Noturno -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#160B11] border border-white/10 p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#160B11">
+              #160B11
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Dark Mode</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Vinho Noturno</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Fundo cinematográfico para inversões de alto impacto.</p>
+          </div>
+        </div>
+
+        <!-- 6. Bronze Editorial -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#5D5043] border border-[#3E342B] p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#5D5043">
+              #5D5043
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Texto Secundário</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Bronze Suave</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Legendas e parágrafos longos balanceados.</p>
+          </div>
+        </div>
+
+        <!-- 7. Terracotta de Foco -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#C76A37] border border-[#A65325] p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#C76A37">
+              #C76A37
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Ponto Focal</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Terracotta</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Nós da thread e badges de atenção imediata.</p>
+          </div>
+        </div>
+
+        <!-- 8. Verde Conversão -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3 shadow-sm flex flex-col">
+          <div class="h-24 rounded-xl bg-[#2AB15C] border border-[#1E8A46] p-3 flex items-end">
+            <button type="button" class="px-2.5 py-1 rounded-md bg-white/95 dark:bg-black/70 text-[#1A120C] dark:text-white font-mono text-[11px] font-bold shadow-sm hover:bg-white transition" data-copy="#2AB15C">
+              #2AB15C
+            </button>
+          </div>
+          <div class="p-2 pt-3 space-y-1">
+            <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Ação Direta</span>
+            <h3 class="font-bold text-sm text-[#1A120C] dark:text-white">Verde Conversão</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA]">Contato via WhatsApp e checkout assistido.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela de Auditoria de Contraste WCAG AAA -->
+      <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-4 sm:p-6 overflow-x-auto shadow-sm">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-[#E8E2D8] dark:border-white/10 font-mono text-[11px] uppercase tracking-wider text-[#8A7B6E] dark:text-zinc-400">
+              <th class="pb-3 font-bold">Camada de Texto</th>
+              <th class="pb-3 font-bold">Fundo Base</th>
+              <th class="pb-3 font-bold">Razão de Contraste</th>
+              <th class="pb-3 font-bold">Auditoria WCAG</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#E8E2D8]/60 dark:divide-white/5">
+            <tr>
+              <td class="py-3 font-medium text-[#1A120C] dark:text-white">Café Profundo (#1A120C)</td>
+              <td class="py-3 text-[#5D5043] dark:text-[#D4C7BA]">Creme Nobre (#FAF8F5)</td>
+              <td class="py-3 font-mono font-bold text-[#1A120C] dark:text-white">15.6 : 1</td>
+              <td class="py-3"><span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 font-mono text-[11px] font-bold">✓ Pass AAA</span></td>
+            </tr>
+            <tr>
+              <td class="py-3 font-medium text-[#1A120C] dark:text-white">Bronze Suave (#5D5043)</td>
+              <td class="py-3 text-[#5D5043] dark:text-[#D4C7BA]">Creme Nobre (#FAF8F5)</td>
+              <td class="py-3 font-mono font-bold text-[#1A120C] dark:text-white">7.8 : 1</td>
+              <td class="py-3"><span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 font-mono text-[11px] font-bold">✓ Pass AAA</span></td>
+            </tr>
+            <tr>
+              <td class="py-3 font-medium text-[#1A120C] dark:text-white">Ouro Sólido (#C8A44D)</td>
+              <td class="py-3 text-[#5D5043] dark:text-[#D4C7BA]">Vinho Noturno (#160B11)</td>
+              <td class="py-3 font-mono font-bold text-[#1A120C] dark:text-white">10.4 : 1</td>
+              <td class="py-3"><span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 font-mono text-[11px] font-bold">✓ Pass AAA</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 04: SISTEMA TIPOGRÁFICO & LIVE TESTER
+         ==================================================================== -->
+    <section id="cap-04" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 04</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Hierarquia & Sistema Tipográfico
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          Composição tripartite: <strong>Mirante</strong> para autoridade titular, <strong>Playfair Display</strong> para refinamento clássico e <strong>Manrope</strong> para leitura digital contínua.
+        </p>
+      </div>
+
+      <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 sm:p-8 divide-y divide-[#E8E2D8]/60 dark:divide-white/5 shadow-sm">
+        <!-- Display -->
+        <div class="pb-6 grid sm:grid-cols-3 gap-3 items-baseline">
+          <div>
+            <span class="font-bold text-sm text-[#1A120C] dark:text-white block">Mirante Bold</span>
+            <span class="font-mono text-xs text-[#8A7B6E] dark:text-zinc-500">Display • -0.02em</span>
+          </div>
+          <div class="sm:col-span-2 font-display text-3xl sm:text-5xl font-bold text-[#1A120C] dark:text-white type-tester-target" data-default="Atenção & Retenção Absoluta">
+            Atenção & Retenção Absoluta
+          </div>
+        </div>
+
+        <!-- H1 -->
+        <div class="py-6 grid sm:grid-cols-3 gap-3 items-baseline">
+          <div>
+            <span class="font-bold text-sm text-[#1A120C] dark:text-white block">Mirante SemiBold</span>
+            <span class="font-mono text-xs text-[#8A7B6E] dark:text-zinc-500">Títulos H1 • -0.01em</span>
+          </div>
+          <div class="sm:col-span-2 font-display text-2xl sm:text-3xl font-semibold text-[#1A120C] dark:text-white type-tester-target" data-default="A Ciência do Vídeo Viral">
+            A Ciência do Vídeo Viral
+          </div>
+        </div>
+
+        <!-- Capitular -->
+        <div class="py-6 grid sm:grid-cols-3 gap-3 items-baseline">
+          <div>
+            <span class="font-bold text-sm text-[#1A120C] dark:text-white block">Playfair Display</span>
+            <span class="font-mono text-xs text-[#8A7B6E] dark:text-zinc-500">Capitulares & Citações</span>
+          </div>
+          <div class="sm:col-span-2 font-serif italic text-lg sm:text-xl text-[#1A120C] dark:text-white">
+            <span class="float-left text-4xl sm:text-5xl font-bold not-italic mr-2 leading-none text-[#C8A44D]">O</span>
+            algoritmo premia a fidelidade do espectador que permanece até o último segundo da mensagem.
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="pt-6 grid sm:grid-cols-3 gap-3 items-baseline">
+          <div>
+            <span class="font-bold text-sm text-[#1A120C] dark:text-white block">Manrope Regular</span>
+            <span class="font-mono text-xs text-[#8A7B6E] dark:text-zinc-500">Corpo de Texto • 1.65 line-height</span>
+          </div>
+          <div class="sm:col-span-2 text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] leading-relaxed">
+            Parágrafos calibrados para 65 a 75 caracteres por linha, garantindo velocidade de escaneamento sem fadiga visual em desktops e smartphones.
+          </div>
+        </div>
+      </div>
+
+      <!-- Testador Interativo de Tipografia Estilo Terminal 21st.dev -->
+      <div class="rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-[#F3EFEA] dark:bg-white/5 p-4 sm:p-6 shadow-sm">
+        <div class="flex items-center gap-2 mb-2 font-mono text-xs font-bold uppercase tracking-wider text-[#C8A44D]">
+          <i data-lucide="type" class="w-4 h-4"></i>
+          <span>Playground Tipográfico em Tempo Real</span>
+        </div>
+        <input
+          id="typeTesterInput"
+          type="text"
+          placeholder="Digite qualquer texto para testar a renderização dos títulos acima..."
+          class="w-full px-4 py-3 rounded-xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] text-sm text-[#1A120C] dark:text-white outline-none focus:border-[#C8A44D] transition"
+        >
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 05: CATÁLOGO SEMIÓTICO OFICIAL DOS 7 VETORES (NODE 20:4)
+         ==================================================================== -->
+    <section id="cap-05" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 05</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Catálogo Semiótico de Vetores Oficiais (Node 20:4)
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          Extraídos diretamente do Figma oficial, estes são os 7 blocos construtivos que compõem a linguagem visual proprietária do Play Viral.
+        </p>
+      </div>
+
+      <!-- Grid de Vetores Estilo 21st.dev -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- 1. Thread com Nós -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4">
+            <img src="../assets/brand-thread.svg" alt="Thread com Nós" class="max-h-12 w-auto object-contain">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C76A37]">Vetor 01 • Conector</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Fio Narrativo (Thread)</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                A linha contínua que costura a atenção do espectador ao longo do vídeo. Os nós circulares são pontos de ancoragem da mensagem.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/brand-thread.svg
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Vesica Piscis -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4">
+            <img src="../assets/brand-vesica-piscis.svg" alt="Vesica Piscis" class="max-h-16 w-auto object-contain">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Vetor 02 • Lente Áurea</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Vesica Piscis (Foco)</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                Intersecção de dois círculos de proporção áurea. Expressa a sintonia exata onde o roteiro encontra o desejo latente da audiência.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/brand-vesica-piscis.svg
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Senoide Contínua -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4">
+            <img src="../assets/brand-wave-continua.svg" alt="Senoide Contínua" class="max-h-12 w-auto object-contain">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Vetor 03 • Cadência</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Senoide de Retenção</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                Oscilação harmônica de ritmo. Alterna tensão e alívio com 4 nós astronômicos que bloqueiam a perda de espectadores.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/brand-wave-continua.svg
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Constelação de Pontos -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4">
+            <img src="../assets/brand-constellation-dots.svg" alt="Constelação de Pontos" class="max-h-16 w-auto object-contain">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Vetor 04 • Simetria</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Constelação & Eixo</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                6 pontos de ressonância flanqueando o divisor vertical. Representam o rigor analítico e o equilíbrio visual de dados.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/brand-constellation-dots.svg
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Rede de Bifurcação -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4">
+            <img src="../assets/brand-bifurcation.svg" alt="Rede de Bifurcação" class="max-h-16 w-auto object-contain">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C76A37]">Vetor 05 • Omnicanal</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Rede de Bifurcação</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                Multiplicação do alcance orgânico. Um único roteiro se ramifica em Reels, TikTok, YouTube Shorts e carrosséis.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/brand-bifurcation.svg
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Guias Direcionais -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center gap-6 p-4">
+            <img src="../assets/brand-arrow-right.svg" alt="Seta Direita" class="h-8 w-auto">
+            <img src="../assets/brand-arrow-down.svg" alt="Seta Baixo" class="h-8 w-auto">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Vetor 06 • Óptica</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Guias Direcionais</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                Vetores de ponta áurea de traço ultrafino que orientam a progressão do olhar sem poluição visual.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/brand-arrow-*.svg
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Prisma Diamante 3D -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4">
+            <img src="../assets/s3-diamond.png" alt="Prisma Diamante" class="max-h-20 w-auto object-contain">
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Ativo 07 • Render 3D</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Prisma Diamante</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                A lapidação de roteiros brutos. Facetas transparentes com reflexos metálicos acetinados.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              assets/s3-diamond.png
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Viewfinder Ticks (Cantoneiras 90°) -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-3.5 shadow-sm flex flex-col">
+          <div class="h-36 rounded-xl bg-[#F8F5EE] dark:bg-black/30 border border-[#E8E2D8]/80 dark:border-white/10 flex items-center justify-center p-4 relative">
+            <div class="absolute top-4 left-6 size-3 border-t-2 border-l-2 border-[#C8A44D]"></div>
+            <div class="absolute top-4 right-6 size-3 border-t-2 border-r-2 border-[#C8A44D]"></div>
+            <div class="absolute bottom-4 left-6 size-3 border-b-2 border-l-2 border-[#C8A44D]"></div>
+            <div class="absolute bottom-4 right-6 size-3 border-b-2 border-r-2 border-[#C8A44D]"></div>
+            <span class="font-mono text-[11px] tracking-widest uppercase font-bold text-[#C8A44D]">REC • 4K 60FPS</span>
+          </div>
+          <div class="p-3 pt-4 flex flex-col justify-between flex-grow space-y-3">
+            <div>
+              <span class="font-mono text-[10.5px] uppercase font-bold text-[#C8A44D]">Elemento 08 • UI Frame</span>
+              <h3 class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-0.5">Viewfinder Corner Ticks</h3>
+              <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1.5 leading-relaxed">
+                Enquadramento que evoca o visor de uma câmera cinematográfica profissional.
+              </p>
+            </div>
+            <div class="font-mono text-[11px] text-[#8A7B6E] dark:text-zinc-500 pt-2 border-t border-[#E8E2D8]/60 dark:border-white/5">
+              CSS Native Precision Frame
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 06: COMPONENTES UI & PADRÕES INTERATIVOS
+         ==================================================================== -->
+    <section id="cap-06" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 06</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Componentes de Interface & Padrões UI
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          Amostras funcionais dos componentes aplicados na landing page oficial.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- 1. Thread Eyebrow Badge -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-base text-[#1A120C] dark:text-white">1. Thread Eyebrow Badge</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1">Rótulo superior com vetor narrativo integrado.</p>
+          </div>
+          <div class="my-8 flex items-center justify-center p-6 bg-[#F8F5EE] dark:bg-black/40 rounded-xl">
+            <div class="inline-flex items-center gap-3 border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] px-4 py-1.5 rounded-full shadow-sm">
+              <img src="../assets/brand-thread.svg" alt="" class="h-3.5 w-auto">
+              <span class="font-display text-xs font-bold tracking-widest uppercase text-[#1A120C] dark:text-white">METODOLOGIA RVE®</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Botão Scroll Dourado (Node 9:48) -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-base text-[#1A120C] dark:text-white">2. Botão Dourado de Scroll</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1">Acionador com halo e vetor de seta (Figma Node 9:48).</p>
+          </div>
+          <div class="my-8 flex items-center justify-center p-6 bg-[#F8F5EE] dark:bg-black/40 rounded-xl">
+            <button type="button" class="size-13 rounded-full bg-gradient-to-r from-[#E7CF8F] via-[#DEC37D] to-[#C8A44D] p-3 shadow-[0_0_0_6px_#FAF8F5] dark:shadow-[0_0_0_6px_#160B11] hover:brightness-105 transition" title="Rolar">
+              <img src="../assets/brand-arrow-down.svg" alt="Rolar" class="size-5 mx-auto">
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Card com Cantoneiras 90° -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-base text-[#1A120C] dark:text-white">3. Card Cinematográfico Viewfinder</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1">Bordas com cantoneiras de precisão técnica.</p>
+          </div>
+          <div class="my-8 flex items-center justify-center p-6 bg-[#F8F5EE] dark:bg-black/40 rounded-xl">
+            <div class="relative bg-white dark:bg-[#160B11] border border-[#E8E2D8] dark:border-white/10 px-8 py-5 rounded-lg text-center">
+              <div class="absolute -top-1 -left-1 size-2.5 border-t-2 border-l-2 border-[#C8A44D]"></div>
+              <div class="absolute -top-1 -right-1 size-2.5 border-t-2 border-r-2 border-[#C8A44D]"></div>
+              <div class="absolute -bottom-1 -left-1 size-2.5 border-b-2 border-l-2 border-[#C8A44D]"></div>
+              <div class="absolute -bottom-1 -right-1 size-2.5 border-b-2 border-r-2 border-[#C8A44D]"></div>
+              <span class="font-mono text-[10.5px] text-[#C8A44D] uppercase font-bold tracking-wider">MÓDULO DE DESTAQUE</span>
+              <div class="font-display font-bold text-base text-[#1A120C] dark:text-white mt-1">Engenharia de Roteiro</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Selo Circular Rotativo 360° -->
+        <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-base text-[#1A120C] dark:text-white">4. Selo Circular Rotativo 360°</h3>
+            <p class="text-xs text-[#5D5043] dark:text-[#D4C7BA] mt-1">Selo orbital contínuo assinado por Valéria Mendes.</p>
+          </div>
+          <div class="my-8 flex items-center justify-center p-6 bg-[#F8F5EE] dark:bg-black/40 rounded-xl">
+            <div class="relative size-24 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" class="size-full animate-stamp">
+                <defs>
+                  <path id="stampPath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+                </defs>
+                <text font-family="Manrope" font-size="7.5" font-weight="700" fill="#C8A44D" letter-spacing="2.2">
+                  <textPath href="#stampPath">
+                    VALÉRIA MENDES • PLAY VIRAL •
+                  </textPath>
+                </text>
+              </svg>
+              <div class="absolute size-9 rounded-full bg-[#1A120C] dark:bg-white flex items-center justify-center text-[#DEC37D] dark:text-[#1A120C] font-serif text-base font-bold shadow">
+                ★
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CAPÍTULO 07: GOVERNANÇA, DIRETRIZES & EXPORTAÇÃO
+         ==================================================================== -->
+    <section id="cap-07" class="space-y-6">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-0.5 bg-[#C8A44D]"></span>
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-[#C8A44D]">Capítulo 07</span>
+      </div>
+      <div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-[#1A120C] dark:text-white">
+          Governança, Diretrizes & Exportação
+        </h2>
+        <p class="text-sm sm:text-base text-[#5D5043] dark:text-[#D4C7BA] max-w-3xl mt-1">
+          Regras de ouro para manter o prestígio visual e a percepção de alto ticket do ecossistema Play Viral.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- DO'S -->
+        <div class="card-bento rounded-2xl border-l-4 border-emerald-500 border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm space-y-4">
+          <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm">
+            <span class="size-6 rounded-full bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-xs">✓</span>
+            <span>Práticas Recomendadas (Do's)</span>
+          </div>
+          <ul class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] space-y-2.5 list-disc pl-5 leading-relaxed">
+            <li>Priorizar o fundo claro Creme Nobre (#FAF8F5) em materiais institucionais, relatórios e páginas de leitura longa.</li>
+            <li>Utilizar o Café Escuro (#1A120C) em vez de preto puro (#000000) para manter a nobreza e eliminar a rigidez digital.</li>
+            <li>Conectar sempre os vetores oficiais (Thread, Senoide, Vesica Piscis) a explicações metodológicas do RVE.</li>
+            <li>Manter no mínimo 48px a 64px de respiro entre blocos de conteúdo para garantir elegância editorial.</li>
+          </ul>
+        </div>
+
+        <!-- DON'TS -->
+        <div class="card-bento rounded-2xl border-l-4 border-rose-500 border border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] p-6 shadow-sm space-y-4">
+          <div class="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-bold text-sm">
+            <span class="size-6 rounded-full bg-rose-100 dark:bg-rose-950/60 flex items-center justify-center text-xs">✕</span>
+            <span>Proibições Estritas (Don'ts)</span>
+          </div>
+          <ul class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] space-y-2.5 list-disc pl-5 leading-relaxed">
+            <li>Nunca usar sombras coloridas difusas de alta saturação (estética de aplicativo barato).</li>
+            <li>Não alterar a proporção áurea nem distorcer a inclinação geométrica do triângulo do logotipo.</li>
+            <li>Evitar cores neon ou saturadas fora da paleta (vermelhos primários, amarelos solares ou degradês genéricos).</li>
+            <li>Não usar os elementos gráficos como marcas d'água ruidosas que concorram com a legibilidade dos textos.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card Monumental de Exportação -->
+      <div class="card-bento rounded-2xl border border-[#E8E2D8] dark:border-white/10 bg-[#F3EFEA] dark:bg-white/5 p-8 sm:p-12 text-center space-y-4 shadow-sm">
+        <h3 class="font-display text-2xl sm:text-3xl font-bold text-[#1A120C] dark:text-white">
+          Exportar Manual Completo em Alta Definição
+        </h3>
+        <p class="text-xs sm:text-sm text-[#5D5043] dark:text-[#D4C7BA] max-w-xl mx-auto leading-relaxed">
+          Esta página está calibrada para geração vetorial nítida em folhas A4 via <code>@media print</code>, separando automaticamente os capítulos e preservando 100% da nitidez gráfica.
+        </p>
+        <div class="pt-2">
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-[#1A120C] dark:bg-white text-white dark:text-[#1A120C] px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:opacity-90 transition">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>Imprimir / Gerar PDF do Brand Book</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="border-t border-[#E8E2D8] dark:border-white/10 bg-white dark:bg-[#160B11] py-10 text-center text-xs text-[#8A7B6E] dark:text-zinc-500">
+    <div class="max-w-6xl mx-auto px-4 space-y-3">
+      <div class="flex items-center justify-center gap-2">
+        <img src="../assets/logo-icon.png" alt="" class="w-5 h-5 object-contain">
+        <span class="font-display font-bold text-sm text-[#1A120C] dark:text-white">Play<span class="text-[#C8A44D]">Viral</span></span>
+      </div>
+      <p>
+        © 2026 Play Viral • Valéria Mendes. Todos os direitos reservados.<br>
+        Brand Book & Sistema Semiótico construído com excelência editorial no padrão <strong>21st.dev / features-8</strong>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

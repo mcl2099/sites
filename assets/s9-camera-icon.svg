@@ -1,0 +1,23 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="30.5165" height="30.5165" viewBox="0 0 30.5165 30.5165" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="s9-camera-gold" x1="6.28" y1="6.28" x2="24.23" y2="22.44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E7CF8F"/>
+      <stop offset="25%" stop-color="#DEC37D"/>
+      <stop offset="50%" stop-color="#C8934F"/>
+      <stop offset="75%" stop-color="#DEC37D"/>
+      <stop offset="100%" stop-color="#E7CF8F"/>
+    </linearGradient>
+  </defs>
+  <g id="camera-icon">
+    <!-- Circular translucent backdrop from Figma Node 304:22 -->
+    <rect width="30.5165" height="30.5165" rx="15.2583" fill="white" fill-opacity="0.28"/>
+    <!-- Camera Icon paths in the section's gold color from Figma -->
+    <g id="camera-icon_2">
+      <!-- Inner lens highlight / center -->
+      <path d="M18.3997 15.2583C18.3997 16.9932 16.9932 18.3997 15.2583 18.3997C13.5233 18.3997 12.1168 16.9932 12.1168 15.2583C12.1168 13.5233 13.5233 12.1168 15.2583 12.1168C16.9932 12.1168 18.3997 13.5233 18.3997 15.2583Z" fill="url(#s9-camera-gold)"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3997 15.2583C18.3997 16.9932 16.9932 18.3997 15.2583 18.3997C13.5233 18.3997 12.1168 16.9932 12.1168 15.2583C12.1168 13.5233 13.5233 12.1168 15.2583 12.1168C16.9932 12.1168 18.3997 13.5233 18.3997 15.2583Z" fill="url(#s9-camera-gold)"/>
+      <!-- Main camera body and lens ring -->
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M6.28281 19.2972C6.28281 21.0322 7.68926 22.4386 9.42421 22.4386H21.0923C22.8272 22.4386 24.2337 21.0322 24.2337 19.2972V11.8204C24.2337 10.1253 22.8595 8.75106 21.1643 8.75106C20.3964 8.75106 19.6563 8.46319 19.0902 7.94428L18.1785 7.10851C17.5991 6.57743 16.8417 6.28281 16.0558 6.28281H14.4607C13.6748 6.28281 12.9174 6.57743 12.338 7.10851L11.4263 7.94428C10.8602 8.46319 10.1201 8.75106 9.3522 8.75106C7.65702 8.75106 6.28281 10.1253 6.28281 11.8204V19.2972ZM15.2582 20.1947C17.9846 20.1947 20.1947 17.9846 20.1947 15.2583C20.1947 12.5319 17.9846 10.3218 15.2582 10.3218C12.5319 10.3218 10.3218 12.5319 10.3218 15.2583C10.3218 17.9846 12.5319 20.1947 15.2582 20.1947Z" fill="url(#s9-camera-gold)"/>
+    </g>
+  </g>
+</svg>

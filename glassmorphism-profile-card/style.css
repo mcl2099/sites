@@ -1,0 +1,452 @@
+/* ==========================================================================
+   GLASSMORPHISM PROFILE CARD — CSS ESTILIZAÇÃO COMPLETA
+   ========================================================================== */
+
+:root {
+  --primary-accent: #DEC37D;
+  --primary-hover: #E7CF8F;
+  --bg-dark: #0A0508;
+  --text-main: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-highlight: rgba(255, 255, 255, 0.4);
+  --glass-blur: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-h-screen: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  position: relative;
+  padding: 2rem 1rem;
+}
+
+/* ==========================================================================
+   BACKGROUND ORBS (Elementos para evidenciar a refração do vidro fosco)
+   ========================================================================== */
+.background-decorations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.65;
+  animation: floatOrb 12s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, #833ab4 0%, #fd1d1d 60%, #fcb045 100%);
+  top: -80px;
+  left: 15%;
+  animation-duration: 14s;
+}
+
+.orb-2 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #DEC37D 0%, #C8A44D 50%, #591632 100%);
+  bottom: -60px;
+  right: 18%;
+  animation-duration: 16s;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, #4facfe 0%, #00f2fe 100%);
+  top: 45%;
+  left: 60%;
+  opacity: 0.35;
+  animation-duration: 10s;
+  animation-delay: -2s;
+}
+
+@keyframes floatOrb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(50px, 40px) scale(1.12);
+  }
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   CARD CONTAINER COM PERSPECTIVA 3D
+   ========================================================================== */
+.card-container {
+  perspective: 1200px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ==========================================================================
+   GLASSMORPHISM CARD NÚCLEO
+   ========================================================================== */
+.glass-card {
+  position: relative;
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 
+    0 30px 60px -15px rgba(0, 0, 0, 0.6),
+    0 10px 20px -5px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px var(--glass-highlight);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.glass-card:hover {
+  border-color: rgba(222, 195, 125, 0.45);
+  box-shadow: 
+    0 35px 75px -15px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(222, 195, 125, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Efeito de Reflexo de Luz (Glare) */
+.glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: overlay;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    circle at 50% 50%, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0) 65%
+  );
+  z-index: 5;
+}
+
+/* ==========================================================================
+   TOPO: STATUS BADGE & MENU
+   ========================================================================== */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+.icon-menu-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background 0.2s;
+}
+
+.icon-menu-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   AVATAR COM ANEL TRANSLÚCIDO E BADGE VERIFICADO
+   ========================================================================== */
+.avatar-wrapper {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 20px auto;
+}
+
+.avatar-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(222, 195, 125, 0.6), rgba(255, 255, 255, 0.1));
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  background: #3B82F6;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   INFORMAÇÕES DE PERFIL
+   ========================================================================== */
+.profile-info {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.profile-handle {
+  font-size: 13px;
+  color: var(--primary-accent);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.profile-bio {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  padding: 0 6px;
+}
+
+/* ==========================================================================
+   ESTATÍSTICAS EM VIDRO
+   ========================================================================== */
+.stats-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 14px 10px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.2px;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   BOTÕES DE AÇÃO
+   ========================================================================== */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.btn-primary {
+  flex: 1;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(231, 207, 143, 0.9), rgba(200, 164, 77, 0.95));
+  color: #12090E;
+  box-shadow: 
+    0 10px 20px -5px rgba(222, 195, 125, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #E7CF8F, #DEC37D);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 14px 24px -5px rgba(222, 195, 125, 0.45),
+    inset 0 1px 1px #FFFFFF;
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  width: 46px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   LINKS SOCIAIS
+   ========================================================================== */
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(222, 195, 125, 0.5);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+  .avatar-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+  .profile-name {
+    font-size: 20px;
+  }
+}

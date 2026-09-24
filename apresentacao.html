@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Viral • Apresentação Oficial & Case Study (Figma Node 483:29)</title>
+  <meta name="description" content="Apresentação executiva e case study do ecossistema Play Viral por Valéria Mendes estruturado no template oficial do Figma com Brand Book integrado.">
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+
+  <!-- Tailwind CSS CDN com suporte ao tema Dark -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            creme: {
+              primary: '#FAF8F5',
+              secondary: '#F3EFEA',
+              card: '#FFFFFF'
+            },
+            cafe: {
+              primary: '#1A120C',
+              secondary: '#2C2018',
+              bronze: '#5D5043',
+              muted: '#8A7B6E'
+            },
+            ouro: {
+              1: '#E7CF8F',
+              2: '#DEC37D',
+              3: '#C8A44D',
+              solid: '#C8A44D'
+            },
+            vinho: {
+              noturno: '#160B11',
+              profundo: '#0F070C'
+            },
+            terracotta: '#C76A37'
+          },
+          fontFamily: {
+            display: ['Mirante', 'Manrope', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            body: ['Manrope', 'sans-serif'],
+            mono: ['Manrope', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="brandbook/style.css">
+
+  <style>
+    /* Estilos Específicos da Apresentação Figma Node 483:29 */
+    body {
+      background-color: #02030A;
+      color: #FAF8F5;
+      overflow-x: hidden;
+    }
+
+    /* Linhas de Órbita Vetorial & Trajetória (Figma Group 35564) */
+    .orbital-vector {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Halo de Iluminação Cósmica (Figma Ellipse 435, 436, 437) */
+    .cosmic-halo {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Mockup MacBook Pro 16 Estilo Figma Node 483:409 */
+    .macbook-chassis {
+      background: linear-gradient(180deg, #2A2B33 0%, #17181F 100%);
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .macbook-screen-bezel {
+      background: #0A0A0E;
+      border: 10px solid #0A0A0E;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      padding: 10px;
+    }
+
+    /* Cards de Cores Suspensos (Figma CORES Node 483:382) */
+    .color-pill-card {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+    }
+
+    .color-pill-card:hover {
+      transform: translateY(8px);
+    }
+
+    /* Janela Mac Safari (Figma TAG MAC Node 483:348) */
+    .mac-safari-window {
+      background: #FAF8F5;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 35px 120px -25px rgba(0, 0, 0, 0.95);
+    }
+
+    .mac-window-topbar {
+      background: #F3EFEA;
+      border-bottom: 1px solid #E8E2D8;
+      padding: 12px 20px;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-[#DEC37D] selection:text-[#1A120C]">
+
+  <!-- Textura Analógica Nobre Global -->
+  <div class="texture-overlay" aria-hidden="true"></div>
+
+  <!-- Halos de Luz Cósmica (Figma Ellipse 435, 436, 437) -->
+  <div class="cosmic-halo w-[950px] h-[580px] bg-[#C8A44D]/10 top-10 left-1/2 -translate-x-1/2" aria-hidden="true"></div>
+  <div class="cosmic-halo w-[500px] h-[600px] bg-[#160B11]/80 top-[1100px] -left-40" aria-hidden="true"></div>
+  <div class="cosmic-halo w-[500px] h-[600px] bg-[#C8A44D]/08 top-[1600px] -right-40" aria-hidden="true"></div>
+
+  <!-- SVG de Linhas Orbitais & Vetores de Trajetória do Figma (Node 483:30) -->
+  <svg class="orbital-vector top-0 left-1/2 -translate-x-1/2 w-[1400px] h-[4200px]" viewBox="0 0 1400 4200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Linha 1: Trajetória Descendente Esquerda -->
+    <path d="M-100 200 C 300 450, 200 950, 450 1400 C 700 1850, 1200 1900, 1100 2500 C 1000 3100, 200 3300, 150 4000" stroke="#C8A44D" stroke-opacity="0.16" stroke-width="1.5" stroke-dasharray="6 8" />
+    <!-- Linha 2: Arco Concêntrico Direito -->
+    <path d="M1500 400 C 1100 650, 1250 1200, 950 1700 C 650 2200, 200 2400, 350 3100 C 500 3800, 1300 3950, 1450 4150" stroke="#DEC37D" stroke-opacity="0.12" stroke-width="1.5" stroke-dasharray="4 6" />
+    <!-- Linha 3: Eixo de Simetria Central Sutil -->
+    <path d="M700 800 L 700 1350" stroke="#C8A44D" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="2 4" />
+    <!-- Pontos Celestiais de Ancoragem (Figma Nodes 483:35 e 483:37) -->
+    <circle cx="450" cy="1400" r="4.5" fill="#C8A44D" fill-opacity="0.6" />
+    <circle cx="450" cy="1400" r="10" stroke="#C8A44D" stroke-opacity="0.25" stroke-width="1" />
+    <circle cx="950" cy="1700" r="4.5" fill="#DEC37D" fill-opacity="0.6" />
+    <circle cx="950" cy="1700" r="10" stroke="#DEC37D" stroke-opacity="0.25" stroke-width="1" />
+  </svg>
+
+  <!-- Toolbar Superior Flutuante de Navegação do Case Study -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#02030A]/85 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between max-w-[1400px] mx-auto">
+    <div class="flex items-center gap-3">
+      <a href="#top" class="flex items-center gap-2.5">
+        <img src="assets/logo-icon.png" alt="Play Viral Símbolo" class="w-7 h-7 object-contain">
+        <span class="font-display font-bold text-lg tracking-tight text-white">
+          Play<span class="text-[#C8A44D]">Viral</span>
+        </span>
+      </a>
+      <span class="hidden md:inline-block text-[11px] font-mono font-bold tracking-wider uppercase px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[#DEC37D]">
+        Case Presentation • Figma Node 483:29
+      </span>
+    </div>
+
+    <!-- Navegação Rápida entre Seções do Template -->
+    <nav class="hidden lg:flex items-center gap-2 text-xs font-semibold" aria-label="Navegação do Case">
+      <a href="#mockup-hero" class="px-3 py-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-white/5 transition">01. MacBook Pro</a>
+      <a href="#brandbook-cores" class="px-3 py-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-white/5 transition">02. Cores Oficiais</a>
+      <a href="#brandbook-tipografia" class="px-3 py-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-white/5 transition">03. Tipografia</a>
+      <a href="#brandbook-vetores" class="px-3 py-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-white/5 transition">04. Vetores Semióticos</a>
+      <a href="#pagina-inteira" class="px-3 py-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-white/5 transition">05. Live Landing Page</a>
+    </nav>
+
+    <!-- Ações de Acesso Rápido -->
+    <div class="flex items-center gap-2.5">
+      <a href="brandbook/index.html" class="inline-flex items-center gap-1.5 border border-[#DEC37D]/40 bg-[#DEC37D]/10 text-[#DEC37D] hover:bg-[#DEC37D] hover:text-[#1A120C] px-3.5 py-1.5 rounded-full text-xs font-bold transition shadow-sm" title="Abrir o Brand Book 21st.dev Completo">
+        <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+        <span>Brand Book ↗</span>
+      </a>
+      <a href="index.html" target="_blank" class="inline-flex items-center gap-1.5 bg-white text-[#1A120C] hover:bg-[#FAF8F5] px-3.5 py-1.5 rounded-full text-xs font-bold transition shadow-sm" title="Abrir a Landing Page em Nova Guia">
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        <span>Landing Page</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Container Principal Centralizado em 1400px (Exato ao Figma) -->
+  <main id="top" class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24 space-y-28">
+
+    <!-- ====================================================================
+         SEÇÃO 01: LOGO HERO & MOCKUP MACBOOK PRO 16 (FIGMA NODE 483:409)
+         ==================================================================== -->
+    <section id="mockup-hero" class="relative text-center pt-8 sm:pt-14">
+
+      <!-- Logo Flutuante Superior com Brilho Dourado -->
+      <div class="inline-flex flex-col items-center mb-8 sm:mb-12">
+        <div class="relative mb-3">
+          <div class="absolute inset-0 bg-[#C8A44D]/25 blur-xl rounded-full" aria-hidden="true"></div>
+          <img src="assets/logo-icon.png" alt="Símbolo Play Viral" class="relative w-12 sm:w-16 h-12 sm:h-16 object-contain drop-shadow-[0_8px_24px_rgba(200,164,77,0.3)]">
+        </div>
+        <span class="font-display font-black text-2xl sm:text-3xl tracking-tight text-white">
+          Play<span class="text-[#DEC37D]">Viral</span>
+        </span>
+        <span class="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-[#DEC37D] mt-1 font-semibold">
+          Arquitetura da Atenção & Retenção • Case Study
+        </span>
+      <!-- Toggle de Visualização do MacBook: Hero Estático vs Vídeo Scroll Completo -->
+      <div class="inline-flex items-center p-1 rounded-full bg-white/5 border border-white/10 mb-6 gap-1 shadow-md">
+        <button id="btnMacHero" onclick="switchMacView('hero')" class="px-4 py-1.5 rounded-full text-xs font-bold transition bg-[#DEC37D] text-[#1A120C]">
+          01. Hero Estático (Figma)
+        </button>
+        <button id="btnMacVideo" onclick="switchMacView('video')" class="px-4 py-1.5 rounded-full text-xs font-bold text-zinc-400 hover:text-white transition flex items-center gap-1.5">
+          <i data-lucide="play" class="w-3.5 h-3.5 text-[#DEC37D]"></i>
+          <span>Vídeo Scroll Desktop (28s)</span>
+        </button>
+      </div>
+
+      <!-- Estrutura do MacBook Pro 16 (Figma Group 1 Node 483:409) -->
+      <div class="relative max-w-5xl mx-auto">
+
+        <!-- Sombra Projetada do Laptop (Soft Shadow) -->
+        <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[92%] h-14 bg-black/80 blur-2xl rounded-[100%] pointer-events-none" aria-hidden="true"></div>
+
+        <!-- Tela do MacBook (Lid & Display) -->
+        <div class="macbook-screen-bezel rounded-t-2xl sm:rounded-t-3xl pt-2 px-2 sm:px-3 pb-0 relative overflow-hidden">
+          
+          <!-- Câmera Notch Central Superior -->
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-4 bg-[#0A0A0E] rounded-b-xl z-30 flex items-center justify-center gap-2">
+            <span class="size-1.5 rounded-full bg-emerald-500/80"></span>
+            <span class="size-2 rounded-full bg-zinc-800 border border-zinc-700"></span>
+          </div>
+
+          <!-- 1. Player de Vídeo Desktop (Scroll Completo) -->
+          <div id="macVideoWrapper" class="hidden relative aspect-[16/10] bg-[#160B11] rounded-t-xl overflow-hidden shadow-inner border border-white/5">
+            <video id="macVideoElement" src="apresentacao_desktop.mp4" controls loop playsinline class="w-full h-full object-cover"></video>
+          </div>
+
+          <!-- 2. Conteúdo da Tela do MacBook: Renderização do Hero Play Viral -->
+          <div id="macHeroWrapper" class="relative aspect-[16/10] bg-[#160B11] rounded-t-xl overflow-hidden shadow-inner flex flex-col justify-between p-6 sm:p-10 border border-white/5">
+            <!-- Padrão de Linhas Sutil no Fundo da Tela -->
+            <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#DEC37D_1px,transparent_1px)] [background-size:20px_20px]" aria-hidden="true"></div>
+
+            <!-- Topbar da Aplicação na Tela -->
+            <div class="relative z-10 flex items-center justify-between border-b border-white/10 pb-3">
+              <div class="flex items-center gap-2">
+                <img src="assets/logo-icon.png" alt="" class="w-5 h-5 object-contain">
+                <span class="font-display font-bold text-sm tracking-tight text-white">Play<span class="text-[#C8A44D]">Viral</span></span>
+              </div>
+              <div class="hidden sm:flex items-center gap-4 text-[11px] font-mono text-zinc-300">
+                <span>MÉTODO RVE®</span>
+                <span>•</span>
+                <span>RETENÇÃO 4K</span>
+                <span>•</span>
+                <span class="text-[#DEC37D]">WCAG AAA</span>
+              </div>
+              <a href="index.html" target="_blank" class="px-2.5 py-1 rounded bg-[#C8A44D] text-[#1A120C] text-[10px] font-bold uppercase tracking-wider">
+                Ver Site Vivo
+              </a>
+            </div>
+
+            <!-- Centro do Hero com Valéria Mendes e Callout -->
+            <div class="relative z-10 grid sm:grid-cols-12 items-center gap-4 py-4 text-left">
+              <div class="sm:col-span-7 space-y-3">
+                <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-white/10 border border-white/15 text-[10.5px] font-mono font-bold text-[#DEC37D] uppercase">
+                  <span class="size-1.5 rounded-full bg-emerald-400"></span>
+                  Mentoria Individual 2026
+                </div>
+                <h2 class="font-display text-xl sm:text-3xl font-extrabold text-white leading-tight">
+                  O Algoritmo Premia a Atenção.<br>
+                  <span class="text-[#DEC37D]">
+                    Retenção é Engenharia.
+                  </span>
+                </h2>
+                <p class="text-xs sm:text-sm text-[#D4C7BA] line-clamp-2 max-w-md">
+                  Aprenda o método prático que transforma roteiros brutos em máquinas de visualizações qualificadas e clientes de alto ticket.
+                </p>
+                <div class="pt-1 flex items-center gap-3">
+                  <span class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#E7CF8F] via-[#DEC37D] to-[#C8A44D] text-[#1A120C] text-xs font-bold shadow-md">
+                    Quero Dominar o Método
+                  </span>
+                  <span class="text-[11px] font-mono text-zinc-400">Taxa de Retenção: +218%</span>
+                </div>
+              </div>
+
+              <!-- Foto da Mentora Valéria Mendes com Glow -->
+              <div class="sm:col-span-5 relative flex justify-center">
+                <div class="absolute inset-0 bg-[#C8A44D]/20 blur-2xl rounded-full" aria-hidden="true"></div>
+                <img src="assets/hero.png" alt="Valéria Mendes" class="relative max-h-48 sm:max-h-64 object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.8)]">
+              </div>
+            </div>
+
+            <!-- Barra Inferior de Métricas na Tela -->
+            <div class="relative z-10 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-zinc-400">
+              <span>RVE FRAMEWORK • 4 ATOS</span>
+              <span class="text-[#DEC37D]">TAXA DE RETENÇÃO > 72%</span>
+              <span class="hidden sm:inline">HIGH-END EDITORIAL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Base / Chassi Inferior do MacBook Pro (Body, Keyboard, Trackpad) -->
+        <div class="macbook-chassis h-12 sm:h-16 rounded-b-2xl sm:rounded-b-3xl px-6 sm:px-12 flex flex-col justify-between pb-2 relative z-20">
+          <!-- Vínculo da Dobradiça do Display -->
+          <div class="w-44 h-1.5 mx-auto bg-[#0F1014] rounded-b-md shadow-inner"></div>
+
+          <!-- Recorte Central de Abertura de Tela -->
+          <div class="w-20 sm:w-28 h-1 mx-auto bg-[#3A3C47] rounded-full"></div>
+
+          <!-- Base Emborrachada Sutil -->
+          <div class="flex justify-between items-center text-[8px] font-mono text-zinc-600 px-4">
+            <span>MacBook Pro 16</span>
+            <span class="size-1 rounded-full bg-zinc-600"></span>
+            <span>Apple Silicon M3 Max</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SEÇÃO 02: BRANDBOOK — PALETA DE CORES (FIGMA CORES NODE 483:382)
+         Substituindo o antigo Nutri Excellence pelas Cores Oficiais Play Viral
+         ==================================================================== -->
+    <section id="brandbook-cores" class="relative pt-6">
+
+      <!-- Título de Contexto da Seção de Cores -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs font-bold text-[#DEC37D] uppercase tracking-widest mb-3">
+          <span>Brand Book • Seção de Cores</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Sistema Cromático da Atenção
+        </h2>
+        <p class="text-xs sm:text-sm text-[#D4C7BA] mt-2 leading-relaxed">
+          Estrutura cromática pendente do MacBook conforme o template do Figma, adaptada para os 4 tons mestres da identidade <strong>Play Viral</strong>. Clique em qualquer card para copiar o código hexadecimal.
+        </p>
+      </div>
+
+      <!-- 4 Cards de Cores Suspensos (Exatos ao Figma Node 483:382) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto relative z-20">
+
+        <!-- 1. Creme Nobre Editorial (#FAF8F5) -->
+        <div class="color-pill-card h-[380px] sm:h-[440px] rounded-[22px] bg-[#FAF8F5] p-5 sm:p-6 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.6)] border border-[#E8E2D8] cursor-pointer group" onclick="copyColor('#FAF8F5', 'Creme Nobre')">
+          <div class="space-y-1">
+            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#8A7B6E] block">01 • Fundo Mestre</span>
+            <span class="font-display font-bold text-lg sm:text-xl text-[#1A120C] block">Creme Nobre</span>
+            <p class="text-[11px] sm:text-xs text-[#5D5043] leading-snug">Clareza editorial sem ofuscamento óptico.</p>
+          </div>
+          <div class="pt-4 border-t border-[#E8E2D8] flex items-center justify-between">
+            <span class="font-mono font-bold text-sm sm:text-base text-[#1A120C]">#FAF8F5</span>
+            <span class="size-7 rounded-full bg-[#1A120C]/10 flex items-center justify-center text-[#1A120C] group-hover:bg-[#1A120C] group-hover:text-white transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. Café Escuro Profundo (#1A120C) -->
+        <div class="color-pill-card h-[380px] sm:h-[440px] rounded-[22px] bg-[#1A120C] p-5 sm:p-6 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.6)] border border-[#2C2018] cursor-pointer group" onclick="copyColor('#1A120C', 'Café Profundo')">
+          <div class="space-y-1">
+            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#DEC37D] block">02 • Tipografia Mestre</span>
+            <span class="font-display font-bold text-lg sm:text-xl text-white block">Café Profundo</span>
+            <p class="text-[11px] sm:text-xs text-[#D4C7BA] leading-snug">Máxima autoridade e contraste WCAG AAA.</p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="font-mono font-bold text-sm sm:text-base text-white">#1A120C</span>
+            <span class="size-7 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#DEC37D] group-hover:text-[#1A120C] transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- 3. Ouro Líquido Metálico (#DEC37D) -->
+        <div class="color-pill-card h-[380px] sm:h-[440px] rounded-[22px] bg-gradient-to-b from-[#E7CF8F] via-[#DEC37D] to-[#C8A44D] p-5 sm:p-6 flex flex-col justify-between shadow-[0_20px_40px_rgba(200,164,77,0.25)] border border-[#E7CF8F] cursor-pointer group" onclick="copyColor('#DEC37D', 'Ouro Líquido')">
+          <div class="space-y-1">
+            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#1A120C]/70 block">03 • Acento Áureo</span>
+            <span class="font-display font-bold text-lg sm:text-xl text-[#1A120C] block">Ouro Líquido</span>
+            <p class="text-[11px] sm:text-xs text-[#2C2018] leading-snug">Prestígio sensorial e valor percebido de mentoria.</p>
+          </div>
+          <div class="pt-4 border-t border-[#1A120C]/20 flex items-center justify-between">
+            <span class="font-mono font-bold text-sm sm:text-base text-[#1A120C]">#DEC37D</span>
+            <span class="size-7 rounded-full bg-[#1A120C]/15 flex items-center justify-center text-[#1A120C] group-hover:bg-[#1A120C] group-hover:text-white transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- 4. Vinho Noturno (#160B11) -->
+        <div class="color-pill-card h-[380px] sm:h-[440px] rounded-[22px] bg-[#160B11] p-5 sm:p-6 flex flex-col justify-between shadow-[0_20px_40px_rgba(0,0,0,0.8)] border border-white/10 cursor-pointer group" onclick="copyColor('#160B11', 'Vinho Noturno')">
+          <div class="space-y-1">
+            <span class="font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-[#C8A44D] block">04 • Dark Mode</span>
+            <span class="font-display font-bold text-lg sm:text-xl text-white block">Vinho Noturno</span>
+            <p class="text-[11px] sm:text-xs text-[#D4C7BA] leading-snug">Atmosfera cinematográfica para inversões.</p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="font-mono font-bold text-sm sm:text-base text-white">#160B11</span>
+            <span class="size-7 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-[#DEC37D] group-hover:text-[#1A120C] transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Barra de Gradiente Decorativo com Diamantes (Figma PALETA Node 483:399) -->
+      <div class="mt-14 max-w-5xl mx-auto flex items-center gap-3">
+        <!-- Marcador Diamante Esquerdo -->
+        <div class="size-3 rotate-45 bg-[#DEC37D] border border-white shadow-[0_0_8px_#DEC37D]"></div>
+        
+        <!-- Linha de Gradiente Contínua (Figma Node 483:402) -->
+        <div class="flex-grow h-0.5 bg-gradient-to-r from-[#160B11] via-[#DEC37D] to-[#FAF8F5] rounded-full opacity-60"></div>
+        
+        <!-- Marcador Diamante Direito -->
+        <div class="size-3 rotate-45 bg-[#E7CF8F] border border-white shadow-[0_0_8px_#E7CF8F]"></div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SEÇÃO 03: BRANDBOOK — TIPOGRAFIA (FIGMA TIPOGRAFIA NODE 483:372)
+         Substituindo Cinzel por Mirante e exibindo a escala Manrope & Playfair
+         ==================================================================== -->
+    <section id="brandbook-tipografia" class="relative pt-6">
+
+      <!-- Título de Contexto da Seção de Tipografia -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs font-bold text-[#DEC37D] uppercase tracking-widest mb-3">
+          <span>Brand Book • Tipografia</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Arquitetura & Famílias Tipográficas
+        </h2>
+        <p class="text-xs sm:text-sm text-[#D4C7BA] mt-2 leading-relaxed">
+          Substituição do antigo par de fontes pela elegância da <strong>Mirante</strong> (Display de Alta-Costura), <strong>Playfair Display</strong> (Capitulares Nobres) e <strong>Manrope</strong> (Interface & Leitura Óptica).
+        </p>
+      </div>
+
+      <!-- Painel Tipográfico Duplo Fiel ao Figma Node 483:372 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto bg-[#160B11]/90 rounded-3xl border border-white/10 p-6 sm:p-10 shadow-[0_24px_64px_rgba(0,0,0,0.8)] backdrop-blur-sm">
+
+        <!-- Coluna Esquerda: Mirante Display (Figma Cinzel) -->
+        <div class="space-y-6 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-8">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#DEC37D] font-bold">Display • Títulos Monumentais</span>
+            <h3 class="font-display text-4xl sm:text-5xl font-black text-white mt-1">Mirante</h3>
+          </div>
+
+          <!-- Alfabeto Completo e Numerais -->
+          <div class="font-display text-lg sm:text-xl text-[#FAF8F5] leading-relaxed tracking-wide space-y-1">
+            <div>Aa Bb Cc Dd Ee Ff Gg Hh Ii</div>
+            <div>Jj Kk Ll Mm Nn Oo Pp Qq</div>
+            <div>Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+            <div class="font-mono text-base text-[#DEC37D] pt-1">0123456789</div>
+          </div>
+
+          <!-- Pesos Disponíveis -->
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span>Pesos Vetoriais:</span>
+              <span class="text-white font-semibold">Medium • SemiBold • Bold • Black</span>
+            </div>
+            <div class="font-display font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#E7CF8F] via-[#DEC37D] to-[#C8A44D]">
+              Play Viral RVE®
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Manrope Body (Figma Manrope) -->
+        <div class="space-y-6">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-[#DEC37D] font-bold">Interface & Leitura Óptica</span>
+            <h3 class="font-body text-4xl sm:text-5xl font-extrabold text-white mt-1">Manrope</h3>
+          </div>
+
+          <!-- Alfabeto Completo e Numerais em Bold -->
+          <div class="font-body font-bold text-lg sm:text-xl text-[#FAF8F5] leading-relaxed tracking-normal space-y-1">
+            <div>Aa Bb Cc Dd Ee Ff Gg Hh Ii</div>
+            <div>Jj Kk Ll Mm Nn Oo Pp Qq</div>
+            <div>Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+            <div class="font-mono text-base text-[#DEC37D] pt-1">0123456789</div>
+          </div>
+
+          <!-- Matriz de Pesos e Demonstração -->
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span>Matriz de Pesos:</span>
+              <span class="text-white font-semibold">Regular • Medium • SemiBold • Bold</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs font-body">
+              <span class="font-normal text-zinc-300">Regular: Atenção & Retenção</span>
+              <span class="font-medium text-zinc-200">Medium: Atenção & Retenção</span>
+              <span class="font-semibold text-white">SemiBold: Atenção & Retenção</span>
+              <span class="font-bold text-[#DEC37D]">Bold: Atenção & Retenção</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SEÇÃO 04: BRANDBOOK — CATÁLOGO SEMIÓTICO DOS VETORES OFICIAIS
+         ==================================================================== -->
+    <section id="brandbook-vetores" class="relative pt-6">
+
+      <!-- Título da Seção de Vetores -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs font-bold text-[#DEC37D] uppercase tracking-widest mb-3">
+          <span>Brand Book • Elementos Gráficos</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Vetores Semióticos Oficiais (Node 20:4)
+        </h2>
+        <p class="text-xs sm:text-sm text-[#D4C7BA] mt-2 leading-relaxed">
+          Os quatro símbolos de ancoragem que constroem a narrativa visual e impedem a evasão de espectadores.
+        </p>
+      </div>
+
+      <!-- Grid dos 4 Vetores Semióticos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+
+        <!-- 1. Fio Narrativo (Thread) -->
+        <div class="rounded-2xl border border-white/10 bg-[#160B11]/80 p-5 flex flex-col justify-between shadow-lg">
+          <div class="h-28 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-3 mb-4">
+            <img src="assets/brand-thread.svg" alt="Thread Narrativa" class="max-h-10 w-auto object-contain">
+          </div>
+          <div>
+            <span class="font-mono text-[10px] uppercase font-bold text-[#C76A37]">Vetor 01</span>
+            <h3 class="font-display font-bold text-base text-white mt-0.5">Fio Narrativo</h3>
+            <p class="text-xs text-[#D4C7BA] mt-1">Costura a atenção do espectador do primeiro ao último segundo do vídeo.</p>
+          </div>
+        </div>
+
+        <!-- 2. Vesica Piscis (Foco) -->
+        <div class="rounded-2xl border border-white/10 bg-[#160B11]/80 p-5 flex flex-col justify-between shadow-lg">
+          <div class="h-28 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-3 mb-4">
+            <img src="assets/brand-vesica-piscis.svg" alt="Vesica Piscis" class="max-h-14 w-auto object-contain">
+          </div>
+          <div>
+            <span class="font-mono text-[10px] uppercase font-bold text-[#DEC37D]">Vetor 02</span>
+            <h3 class="font-display font-bold text-base text-white mt-0.5">Vesica Piscis</h3>
+            <p class="text-xs text-[#D4C7BA] mt-1">Lente de foco onde o roteiro encontra o desejo latente da audiência.</p>
+          </div>
+        </div>
+
+        <!-- 3. Senoide de Retenção -->
+        <div class="rounded-2xl border border-white/10 bg-[#160B11]/80 p-5 flex flex-col justify-between shadow-lg">
+          <div class="h-28 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-3 mb-4">
+            <img src="assets/brand-wave-continua.svg" alt="Senoide de Retenção" class="max-h-10 w-auto object-contain">
+          </div>
+          <div>
+            <span class="font-mono text-[10px] uppercase font-bold text-[#DEC37D]">Vetor 03</span>
+            <h3 class="font-display font-bold text-base text-white mt-0.5">Senoide Contínua</h3>
+            <p class="text-xs text-[#D4C7BA] mt-1">Cadência harmônica que equilibra picos de tensão e alívio narrativo.</p>
+          </div>
+        </div>
+
+        <!-- 4. Prisma Diamante 3D -->
+        <div class="rounded-2xl border border-white/10 bg-[#160B11]/80 p-5 flex flex-col justify-between shadow-lg">
+          <div class="h-28 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-3 mb-4">
+            <img src="assets/s3-diamond.png" alt="Prisma Diamante 3D" class="max-h-16 w-auto object-contain">
+          </div>
+          <div>
+            <span class="font-mono text-[10px] uppercase font-bold text-[#DEC37D]">Ativo 04</span>
+            <h3 class="font-display font-bold text-base text-white mt-0.5">Prisma Diamante</h3>
+            <p class="text-xs text-[#D4C7BA] mt-1">Lapidação de ideias brutas em múltiplos ativos de alto ticket.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SEÇÃO 05: JANELA MAC SAFARI COM A LANDING PAGE COMPLETA (PAGINA INTEIRA)
+         Figma Nodes 483:42 e 483:348 (TAG MAC)
+         ==================================================================== -->
+    <section id="pagina-inteira" class="relative pt-6">
+
+      <!-- Título de Contexto da Janela do Mac -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs font-bold text-[#DEC37D] uppercase tracking-widest mb-3">
+          <span>Apresentação Completa • Live Browser View</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          Página Inteira em Moldura macOS
+        </h2>
+        <p class="text-xs sm:text-sm text-[#D4C7BA] mt-2 leading-relaxed">
+          Renderização interativa e fluida da Landing Page oficial Play Viral dentro da moldura Safari Mac, permitindo navegação ao vivo por todas as seções.
+        </p>
+      </div>
+
+      <!-- Controles de Visualização da Moldura macOS (Iframe vs Vídeos Renderizados) -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
+        <button id="btnSafariIframe" onclick="switchSafariView('iframe')" class="px-4 py-2 rounded-full text-xs font-bold transition bg-[#DEC37D] text-[#1A120C] shadow-md flex items-center gap-2">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+          <span>Navegação Interativa (Live)</span>
+        </button>
+        <button id="btnSafariVideoDesk" onclick="switchSafariView('videoDesk')" class="px-4 py-2 rounded-full text-xs font-bold text-zinc-300 hover:text-white transition flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10">
+          <i data-lucide="monitor" class="w-3.5 h-3.5 text-[#DEC37D]"></i>
+          <span>Vídeo Desktop (1440x900 • 28s)</span>
+        </button>
+        <button id="btnSafariVideoMob" onclick="switchSafariView('videoMob')" class="px-4 py-2 rounded-full text-xs font-bold text-zinc-300 hover:text-white transition flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5 text-[#DEC37D]"></i>
+          <span>Vídeo Mobile (780x1688 • 34s)</span>
+        </button>
+        <a href="apresentacao_desktop.mp4" download class="px-3.5 py-2 rounded-full text-xs font-semibold text-zinc-400 hover:text-white transition flex items-center gap-1.5 bg-white/5 border border-white/10" title="Baixar Vídeo Desktop MP4">
+          <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Download Desktop (2.15 MB)</span>
+        </a>
+        <a href="apresentacao_mobile.mp4" download class="px-3.5 py-2 rounded-full text-xs font-semibold text-zinc-400 hover:text-white transition flex items-center gap-1.5 bg-white/5 border border-white/10" title="Baixar Vídeo Mobile MP4">
+          <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>Download Mobile (2.51 MB)</span>
+        </a>
+      </div>
+
+      <!-- Estrutura da Janela Safari Mac (Figma TAG MAC Node 483:348) -->
+      <div class="mac-safari-window rounded-2xl sm:rounded-3xl overflow-hidden max-w-6xl mx-auto text-[#1A120C]">
+
+        <!-- Topbar Safari Oficial do Figma (Node 483:348) -->
+        <div class="mac-window-topbar px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+
+          <!-- Semáforo macOS (Botões Fechar, Minimizar, Expandir) -->
+          <div class="flex items-center gap-2">
+            <span class="size-3 rounded-full bg-[#FF5F56] border border-[#E0443E] shadow-sm inline-block"></span>
+            <span class="size-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] shadow-sm inline-block"></span>
+            <span class="size-3 rounded-full bg-[#27C93F] border border-[#1AAB29] shadow-sm inline-block"></span>
+
+            <!-- Botão Lateral de Barra de Abas -->
+            <div class="hidden sm:flex items-center ml-4 text-zinc-500 hover:text-black transition">
+              <i data-lucide="panel-left" class="w-4 h-4"></i>
+            </div>
+            <!-- Setas Voltar e Avançar -->
+            <div class="hidden sm:flex items-center gap-2 ml-2 text-zinc-500">
+              <i data-lucide="chevron-left" class="w-4 h-4 cursor-pointer hover:text-black transition"></i>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-300"></i>
+            </div>
+          </div>
+
+          <!-- Barra de Endereço URL Centralizada (Figma Rectangle 21 Node 483:368) -->
+          <div class="flex-grow max-w-lg mx-auto bg-white/90 border border-[#E8E2D8] rounded-full px-4 py-1.5 flex items-center justify-center gap-2 shadow-sm text-xs font-mono text-zinc-600">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-[#2AB15C]"></i>
+            <span class="font-semibold text-[#1A120C]">playviral.com.br</span>
+            <span class="text-zinc-400">/mentoria-valeria-mendes</span>
+          </div>
+
+          <!-- Ações à Direita (Compartilhar, Nova Aba, Abas Abertas) -->
+          <div class="flex items-center gap-3 text-zinc-500">
+            <a href="index.html" target="_blank" class="hover:text-black transition" title="Abrir página completa em tela cheia">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+            <span class="hidden sm:inline-block cursor-pointer hover:text-black transition">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+            </span>
+            <span class="hidden sm:inline-block cursor-pointer hover:text-black transition">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Corpo da Janela Mac: Modos de Visualização -->
+        <div class="relative w-full bg-[#160B11] h-[900px] sm:h-[1100px] overflow-hidden">
+          
+          <!-- 1. Iframe Interativo da Landing Page Viva -->
+          <div id="safariIframeWrapper" class="w-full h-full">
+            <iframe 
+              src="index.html" 
+              class="w-full h-full border-0" 
+              title="Landing Page Play Viral Completa"
+              loading="lazy"
+            ></iframe>
+
+            <!-- Overlay Flutuante com Dica de Interatividade -->
+            <div class="absolute bottom-4 right-4 bg-[#1A120C]/90 text-white border border-white/10 px-3.5 py-1.5 rounded-full text-xs font-mono flex items-center gap-2 shadow-lg backdrop-blur-md pointer-events-none">
+              <span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Navegue interativamente dentro da moldura</span>
+            </div>
+          </div>
+
+          <!-- 2. Vídeo de Apresentação Desktop (Scroll Suave) -->
+          <div id="safariVideoDeskWrapper" class="hidden w-full h-full bg-[#0F070C] flex flex-col items-center justify-center p-4">
+            <div class="w-full h-full flex flex-col justify-between">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10 text-white text-xs font-mono">
+                <span class="flex items-center gap-2 text-[#DEC37D]">
+                  <i data-lucide="film" class="w-4 h-4"></i>
+                  <span>APRESENTAÇÃO COMPLETA DESKTOP (1440x900)</span>
+                </span>
+                <span class="text-zinc-400">Duração: 28 segundos • 30 fps</span>
+              </div>
+              <div class="flex-grow flex items-center justify-center overflow-hidden py-3">
+                <video id="safariVideoDeskEl" src="apresentacao_desktop.mp4" controls loop playsinline class="max-h-full max-w-full rounded-xl shadow-2xl border border-white/10"></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Vídeo de Apresentação Mobile (iPhone Frame) -->
+          <div id="safariVideoMobWrapper" class="hidden w-full h-full bg-[#0F070C] flex flex-col items-center justify-center p-4">
+            <div class="w-full h-full flex flex-col justify-between">
+              <div class="flex items-center justify-between pb-3 border-b border-white/10 text-white text-xs font-mono">
+                <span class="flex items-center gap-2 text-[#DEC37D]">
+                  <i data-lucide="smartphone" class="w-4 h-4"></i>
+                  <span>APRESENTAÇÃO COMPLETA MOBILE (780x1688 • iPhone Pro)</span>
+                </span>
+                <span class="text-zinc-400">Duração: 34 segundos • 30 fps</span>
+              </div>
+              <div class="flex-grow flex items-center justify-center overflow-hidden py-3">
+                <div class="relative max-h-full rounded-[40px] p-2.5 bg-gradient-to-b from-[#3A3C47] to-[#1E2026] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] border border-white/15">
+                  <div class="rounded-[32px] overflow-hidden bg-black flex items-center justify-center max-h-[760px]">
+                    <video id="safariVideoMobEl" src="apresentacao_mobile.mp4" controls loop playsinline class="max-h-[760px] w-auto object-contain"></video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SEÇÃO 06: RODAPÉ INSTITUCIONAL & BIO DO CASE (FIGMA NODE 483:725)
+         ==================================================================== -->
+    <section class="border-t border-white/10 pt-12 pb-6 max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        
+        <!-- Identificação e Bio -->
+        <div class="space-y-3 max-w-md">
+          <div class="font-mono text-xs uppercase tracking-widest text-[#DEC37D] font-bold">
+            // Case Study & Design System
+          </div>
+          <h3 class="font-display text-2xl font-bold text-white">
+            Play Viral • Valéria Mendes
+          </h3>
+          <p class="text-xs text-[#D4C7BA] leading-relaxed">
+            Projeto construído com base em princípios da neurociência da atenção, tipografia suíça e componentes modulares 21st.dev.
+          </p>
+          <div class="text-[11px] font-mono text-zinc-500 pt-1">
+            Figma Dev Mode Node 483:29 • WCAG AAA Verified
+          </div>
+        </div>
+
+        <!-- QR Code Interativo em SVG Vetorial Nítido -->
+        <div class="flex flex-col items-center gap-2 bg-white/5 border border-white/10 p-4 rounded-2xl">
+          <div class="size-32 bg-white p-2 rounded-xl flex items-center justify-center">
+            <!-- SVG QR Code Oficial Simbólico Nítido -->
+            <svg class="size-full" viewBox="0 0 100 100" fill="#1A120C">
+              <!-- Cantos do QR -->
+              <rect x="0" y="0" width="30" height="30" rx="4" fill="#1A120C"/>
+              <rect x="5" y="5" width="20" height="20" rx="2" fill="white"/>
+              <rect x="10" y="10" width="10" height="10" rx="1" fill="#1A120C"/>
+              <rect x="70" y="0" width="30" height="30" rx="4" fill="#1A120C"/>
+              <rect x="75" y="5" width="20" height="20" rx="2" fill="white"/>
+              <rect x="80" y="10" width="10" height="10" rx="1" fill="#1A120C"/>
+              <rect x="0" y="70" width="30" height="30" rx="4" fill="#1A120C"/>
+              <rect x="5" y="75" width="20" height="20" rx="2" fill="white"/>
+              <rect x="10" y="80" width="10" height="10" rx="1" fill="#1A120C"/>
+              <!-- Módulos de Dados -->
+              <rect x="35" y="10" width="8" height="8" rx="1"/>
+              <rect x="48" y="5" width="8" height="8" rx="1"/>
+              <rect x="35" y="25" width="8" height="8" rx="1"/>
+              <rect x="48" y="20" width="8" height="8" rx="1"/>
+              <rect x="10" y="40" width="8" height="8" rx="1"/>
+              <rect x="25" y="45" width="8" height="8" rx="1"/>
+              <rect x="40" y="40" width="8" height="8" rx="1"/>
+              <rect x="55" y="45" width="8" height="8" rx="1"/>
+              <rect x="70" y="40" width="8" height="8" rx="1"/>
+              <rect x="85" y="45" width="8" height="8" rx="1"/>
+              <rect x="40" y="60" width="8" height="8" rx="1"/>
+              <rect x="55" y="65" width="8" height="8" rx="1"/>
+              <rect x="70" y="60" width="8" height="8" rx="1"/>
+              <rect x="85" y="75" width="8" height="8" rx="1"/>
+              <rect x="70" y="85" width="8" height="8" rx="1"/>
+              <rect x="40" y="80" width="8" height="8" rx="1"/>
+              <rect x="55" y="85" width="8" height="8" rx="1"/>
+            </svg>
+          </div>
+          <span class="font-mono text-[10px] uppercase font-semibold text-[#DEC37D]">Escaneie para Acessar</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast de Notificação ao Copiar Cores -->
+  <div id="copyToast" class="bb-toast" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg">Cor copiada para a área de transferência!</span>
+  </div>
+
+  <script>
+    // Inicialização dos Ícones Lucide
+    lucide.createIcons();
+
+    // Função de Cópia Interativa com Notificação Toast
+    function copyColor(hex, name) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(hex).then(() => {
+          showToast(`Código ${hex} (${name}) copiado!`);
+        });
+      } else {
+        showToast(`Código ${hex} selecionado!`);
+      }
+    }
+
+    // Alternância de Visualização do MacBook Pro (Hero vs Vídeo Desktop)
+    function switchMacView(view) {
+      const heroEl = document.getElementById('macHeroWrapper');
+      const videoWrap = document.getElementById('macVideoWrapper');
+      const videoEl = document.getElementById('macVideoElement');
+      const btnHero = document.getElementById('btnMacHero');
+      const btnVideo = document.getElementById('btnMacVideo');
+
+      if (view === 'video') {
+        heroEl.classList.add('hidden');
+        videoWrap.classList.remove('hidden');
+        btnVideo.className = 'px-4 py-1.5 rounded-full text-xs font-bold transition bg-[#DEC37D] text-[#1A120C] flex items-center gap-1.5 shadow-sm';
+        btnHero.className = 'px-4 py-1.5 rounded-full text-xs font-bold text-zinc-400 hover:text-white transition';
+        if (videoEl) {
+          videoEl.currentTime = 0;
+          videoEl.play().catch(() => {});
+        }
+      } else {
+        videoWrap.classList.add('hidden');
+        heroEl.classList.remove('hidden');
+        btnHero.className = 'px-4 py-1.5 rounded-full text-xs font-bold transition bg-[#DEC37D] text-[#1A120C] shadow-sm';
+        btnVideo.className = 'px-4 py-1.5 rounded-full text-xs font-bold text-zinc-400 hover:text-white transition flex items-center gap-1.5';
+        if (videoEl) videoEl.pause();
+      }
+    }
+
+    // Alternância de Visualização da Janela macOS Safari (Iframe vs Vídeo Desktop vs Vídeo Mobile)
+    function switchSafariView(view) {
+      const iframeWrap = document.getElementById('safariIframeWrapper');
+      const videoDeskWarp = document.getElementById('safariVideoDeskWrapper');
+      const videoMobWrap = document.getElementById('safariVideoMobWrapper');
+      const videoDeskEl = document.getElementById('safariVideoDeskEl');
+      const videoMobEl = document.getElementById('safariVideoMobEl');
+
+      const btnIframe = document.getElementById('btnSafariIframe');
+      const btnDesk = document.getElementById('btnSafariVideoDesk');
+      const btnMob = document.getElementById('btnSafariVideoMob');
+
+      const inactiveBtn = 'px-4 py-2 rounded-full text-xs font-bold text-zinc-300 hover:text-white transition flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10';
+      const activeBtn = 'px-4 py-2 rounded-full text-xs font-bold transition bg-[#DEC37D] text-[#1A120C] shadow-md flex items-center gap-2';
+
+      iframeWrap.classList.add('hidden');
+      videoDeskWarp.classList.add('hidden');
+      videoMobWrap.classList.add('hidden');
+      if (videoDeskEl) videoDeskEl.pause();
+      if (videoMobEl) videoMobEl.pause();
+
+      btnIframe.className = inactiveBtn;
+      btnDesk.className = inactiveBtn;
+      btnMob.className = inactiveBtn;
+
+      if (view === 'videoDesk') {
+        videoDeskWarp.classList.remove('hidden');
+        btnDesk.className = activeBtn;
+        if (videoDeskEl) {
+          videoDeskEl.currentTime = 0;
+          videoDeskEl.play().catch(() => {});
+        }
+      } else if (view === 'videoMob') {
+        videoMobWrap.classList.remove('hidden');
+        btnMob.className = activeBtn;
+        if (videoMobEl) {
+          videoMobEl.currentTime = 0;
+          videoMobEl.play().catch(() => {});
+        }
+      } else {
+        iframeWrap.classList.remove('hidden');
+        btnIframe.className = activeBtn;
+      }
+    }
+  </script>
+</body>
+</html>
